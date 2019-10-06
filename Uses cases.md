@@ -36,8 +36,8 @@
 | **Use Case Name** | **Request status change** |
 | --- | --- |
 | Actors | Administration |
-| Pre-conditions | Admin selects the new status for the request and enters the comment message |
-| Flow of events | <ol> <li>System updates the request with the new status</li> <li> Email is sent to the client who created this request containing the new status and the comment message. Also, there is the help text telling that a new request can be created using the system </li></ol>  |
+| Pre-conditions | An existing request with any status, except “done” status |
+| Flow of events | <ol> <li>Include Admin Panel Request List Use Case</li><li>System updates the request with the new status</li> <li> Email is sent to the client who created this request containing the new status and the comment message. Also, there is the help text telling that a new request can be created using the system </li></ol>  |
 | Post-conditions | <ul><li>Request is updated with the selected status </li> <li>Email is sent with the new status and the entered comment message</li></ul> |
 
 | **Use Case Name** | **Feedback on the cleaning filling** |
