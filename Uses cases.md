@@ -30,10 +30,10 @@
 | **Use Case Name** | **Request for Cleaning Creation** |
 | --- | --- |
 | Actors | Client |
-| Pre-conditions | Signed in client creates a new request for cleaning, specifying the date and time when the cleaning should be performed, room number. The time should be in the range from 10 am to 6 pm |
-| Flow of events | 1. The system creates a request with the specified date, time and room number. The status of the order should be &quot;New&quot;.|
+| Pre-conditions | The client is authenticated |
+| Flow of events | <ol><li>The client selects his room number, date and time for performing cleaning</li><li>The system validates selected date and time - the time should be in the range from 10 am to 6 pm</li><li>The system creates a request with the specified date, time and room number. The status of the order should be “New”.</li></ol>|
 | Post-conditions | Request with the specified data is created |
-| Alternate flows and exceptions | <ol> <li>If user have specified time not in the range from 10 am to 6 pm, the request is not created and the error message is shown </li> <li> Request is not created </li> </ol> |
+| Alternate flows and exceptions | <ol> <li>If the user has not specified the time in the range from 10 am to 6 pm, the request is not created and the error message is shown </li> </ol> |
 
 | **Use Case Name** | **Request status change** |
 | --- | --- |
