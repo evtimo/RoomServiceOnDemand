@@ -57,6 +57,5 @@
 | **Use Case Name** | **Change of Language** |
 | --- | --- |
 | Actors | Client, Admin |
-| Pre-conditions | User selects a language (Russian or English) |
-| Flow of events | System shows system text in the selected language for this user |
+| Flow of events | <ol><li>The user selects a language (Russian or English)</li><li>The system displays the user interface in the selected language</li></ol>|
 | Post-conditions | System text is shown in the selected language |
