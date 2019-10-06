@@ -14,16 +14,14 @@
 | **Use Case Name** | **Sign Up** |
 | --- | --- |
 | Actors | Client |
-| Pre-conditions | User filled the sign-up form: email, password (>8 symbols, at least one digit), full name, phone number (in international format) |
-| Flow of events | <ol><li>The system validates the input fields for completeness and correctness of the format </li><li>The system checks that there is no account registered with the provided login </li> <li>The system creates an account with the provided client information (name, email, password)</li></ol> |
+| Flow of events | <ol><li>User fills the sign-up form: email, password (>8 symbols, at least one digit), full name, phone number (in international format)</li><li>The system validates the input fields for completeness and correctness of the format </li><li>The system checks that there is no account registered with the provided login </li> <li>The system creates an account with the provided client information (name, email, password)</li></ol> |
 | Post-conditions | User is registered and can Sign In with the provided credentials |
 | Alternate flows and exceptions | <ol><li>At least one of the fields in the form is incorrect, the user gets a message of what was incorrect and fills the form again</li><li>The system finds an account with the provided login, the system shows a message that a user with the provided login is already registered, the user is not registered</li> </ol> |
 
 | **Use Case Name** | **Sign In** |
 | --- | --- |
 | Actors | Client, Administration |
-| Pre-conditions | The user filled the sign-in form: email and password |
-| Flow of events | <ol><li>The system validates the input fields for completeness and correctness of the format</li><li>System checks that there is an account with the provided email and password</li><li>The system authenticates the user</li></ol> |
+| Flow of events | <ol><li>The user fills the sign-in form: email and password</li><li>The system validates the input fields for completeness and correctness of the format</li><li>System checks that there is an account with the provided email and password</li><li>The system authenticates the user</li></ol> |
 | Post-conditions | User is authenticated |
 | Alternate flows and exceptions | <ol><li>At least one of the fields in the form is incorrect, the user gets a message of what was incorrect and fills the form again</li><li>Account for the provided email and password was not found, the system shows an error message that there is no user registered with the provided login and password combination, the user is not signed in</li></ol> |
 
