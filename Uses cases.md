@@ -1,3 +1,6 @@
+# Use Case Diagram 
+[![Use Case Diagram](https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/Iteration-2/Requirements/Use%20Case%20Diagram.png?raw=true "Use Case Diagram")](https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/Iteration-2/Requirements/Use%20Case%20Diagram.png?raw=true "Use Case Diagram")
+
 **Terminology**
 
 | **Term** | **Definition** |
