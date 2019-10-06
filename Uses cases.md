@@ -29,8 +29,8 @@
 | --- | --- |
 | Actors | Client |
 | Pre-conditions | The client is authenticated |
-| Flow of events | <ol><li>The client selects his room number, date and time for performing cleaning</li><li>The system validates selected date and time - the time should be in the range from 10 am to 6 pm</li><li>The system creates a request with the specified date, time and room number. The status of the order should be “New”.</li></ol>|
-| Post-conditions | Request with the specified data is created |
+| Flow of events | <ol><li>The client selects his room number, date and time for performing cleaning</li><li>The system validates selected date and time - the time should be in the range from 10 am to 6 pm</li><li>The system creates a request with the specified date, time and room number.</li></ol>|
+| Post-conditions | Request with status "New" and the specified data is created |
 | Alternate flows and exceptions | <ol> <li>If the user has not specified the time in the range from 10 am to 6 pm, the request is not created and the error message is shown </li> </ol> |
 
 | **Use Case Name** | **Request status change** |
