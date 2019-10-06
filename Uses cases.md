@@ -21,11 +21,11 @@
 
 | **Use Case Name** | **Sign In** |
 | --- | --- |
-| Actors | Client or Administration |
-| Pre-conditions | User enters their crls in the Sign In form |
-| Flow of events | <ol><li>System checks that there is an account with the provided login and password</li><li>System considers the client as signed in</li></ol> |
-| Post-conditions | User is Signed In |
-| Alternate flows and exceptions | <ol><li>System does not find an account with the provided login and password</li><li>System shows a message that there is no user registered with the provided login and password combination</li><li>User is not signed in</li></ol> |
+| Actors | Client, Administration |
+| Pre-conditions | The user filled the sign-in form: email and password |
+| Flow of events | <ol><li>The system validates the input fields for completeness and correctness of the format</li><li>System checks that there is an account with the provided email and password</li><li>The system authenticates the user</li></ol> |
+| Post-conditions | User is authenticated |
+| Alternate flows and exceptions | <ol><li>At least one of the fields in the form is incorrect, the user gets a message of what was incorrect and fills the form again</li><li>Account for the provided email and password was not found, the system shows an error message that there is no user registered with the provided login and password combination, the user is not signed in</li></ol> |
 
 | **Use Case Name** | **Request for Cleaning Creation** |
 | --- | --- |
