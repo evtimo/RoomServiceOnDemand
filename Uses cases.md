@@ -14,10 +14,10 @@
 | **Use Case Name** | **Sign Up** |
 | --- | --- |
 | Actors | Client |
-| Pre-conditions | User filled the sign up form |
-| Flow of events | <ol><li>Systems checks that there is no account registered with the provided login</li><li>System creates an account with the provided client information (name, login, password)</li></ol> |
+| Pre-conditions | User filled the sign-up form: email, password (>8 symbols, at least one digit), full name, phone number (in international format) |
+| Flow of events | <ol><li>The system validates the input fields for completeness and correctness of the format </li><li>The system checks that there is no account registered with the provided login </li> <li>The system creates an account with the provided client information (name, email, password)</li></ol> |
 | Post-conditions | User is registered and can Sign In with the provided credentials |
-| Alternate flows and exceptions | <ol><li>System finds an account with the provided login</li><li>System shows a message that a user with the provided login is already registered</li><li>User is not registered</li><li>Account is not created</li> </ol> |
+| Alternate flows and exceptions | <ol><li>At least one of the fields in the form is incorrect, the user gets a message of what was incorrect and fills the form again</li><li>The system finds an account with the provided login, the system shows a message that a user with the provided login is already registered, the user is not registered</li> </ol> |
 
 | **Use Case Name** | **Sign In** |
 | --- | --- |
