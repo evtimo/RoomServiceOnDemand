@@ -50,9 +50,9 @@
 | **Use Case Name** | **Admin Panel Request List** |
 | --- | --- |
 | Actors | Admin |
-| Pre-conditions | Signed in admin opens the admin panel |
-| Flow of events | System shows all requests |
-| Post-conditions | Admin sees requests in the admin panel |
+| Pre-conditions | Admin is authenticated |
+| Flow of events | <ol><li>Admin opens the request list</li><li>The system shows a list with all requests</li></ol> |
+| Post-conditions | The system displayed all requests in the admin panel |
 
 | **Use Case Name** | **Change of Language** |
 | --- | --- |
