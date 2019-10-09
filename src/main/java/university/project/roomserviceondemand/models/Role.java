@@ -6,6 +6,6 @@ package university.project.roomserviceondemand.models;
 
 public enum Role {
 
-    ADMIN, STUDENT
+    ADMIN, CLIENT
 
 }
