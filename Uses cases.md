@@ -14,7 +14,7 @@
 | Administrator | Dorm administrator or another official |
 | Cleaning | Specialists who are responsible for cleaning of rooms |
 
-### [sign-up](#sign-up-use-case)
+### [Sign-up](#sign-up-use-case)
 
 | **Use Case Name** | **Sign-Up** |
 | --- | --- |
@@ -26,7 +26,7 @@
 <img src="https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/Iteration-2/Requirements/Activity%20diagrams/AD_signup.png?raw=true" width="50%" />
 
 
-### [Sign-In](#sign-up-use-case)
+### [Sign-In](#sign-in-use-case)
 | **Use Case Name** | **Sign In** |
 | --- | --- |
 | Actors | Client, Administration |
