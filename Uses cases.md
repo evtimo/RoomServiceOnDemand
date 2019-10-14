@@ -14,7 +14,7 @@
 | Administrator | Dorm administrator or another official |
 | Cleaning | Specialists who are responsible for cleaning of rooms |
 
-### [Sign-up](#sign-up-use-case)
+### [Sign-up](#sign-up)
 
 | **Use Case Name** | **Sign-Up** |
 | --- | --- |
@@ -26,7 +26,7 @@
 <img src="https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/Iteration-2/Requirements/Activity%20diagrams/AD_signup.png?raw=true" width="50%" />
 
 
-### [Sign-In](#sign-in-use-case)
+### [Sign-In](#sign-in)
 | **Use Case Name** | **Sign In** |
 | --- | --- |
 | Actors | Client, Administration |
@@ -36,7 +36,7 @@
 
 <img src="https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/Iteration-2/Requirements/Activity%20diagrams/AD_signin.png?raw=true" width="50%" />
 
-### [Request for Cleaning Creation](#cleaning-request-use-case)
+### [Request for Cleaning Creation](#request-for-cleaning-creation)
 | **Use Case Name** | **Request for Cleaning Creation** |
 | --- | --- |
 | Actors | Client |
@@ -47,7 +47,7 @@
 
 <img src="https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/Iteration-2/Requirements/Activity%20diagrams/AD_createrequest.png?raw=true" width="50%" />
 
-### [Request status change](#change-status-use-case)
+### [Request status change](#request-status-change)
 | **Use Case Name** | **Request status change** |
 | --- | --- |
 | Actors | Administration |
@@ -57,7 +57,7 @@
 
 <img src="https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/Iteration-2/Requirements/Activity%20diagrams/AD_status_change.png?raw=true" width="50%" />
 
-### [Feedback on the cleaning filling](#cleaning-feedback-use-case)
+### [Feedback on the cleaning filling](#feedback-on-the-cleaning-filling)
 | **Use Case Name** | **Feedback on the cleaning filling** |
 | --- | --- |
 | Actors | Client |
@@ -67,7 +67,7 @@
 
 <img src="https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/Iteration-2/Requirements/Activity%20diagrams/AD_feedback.png?raw=true" width="50%" />
 
-### [Admin Panel Request List](#request-list-use-case)
+### [Admin Panel Request List](#admin-panel-request-list)
 | **Use Case Name** | **Admin Panel Request List** |
 | --- | --- |
 | Actors | Admin |
@@ -77,7 +77,7 @@
 
 <img src="https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/Iteration-2/Requirements/Activity%20diagrams/AD_list_request.png?raw=true" width="50%" />
 
-### [Change of Language](#change-language-use-case)
+### [Change of Language](#change-of-language)
 | **Use Case Name** | **Change of Language** |
 | --- | --- |
 | Actors | Client, Admin |
