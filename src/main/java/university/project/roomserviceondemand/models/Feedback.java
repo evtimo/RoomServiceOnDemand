@@ -4,6 +4,11 @@ package university.project.roomserviceondemand.models;
  *  Date: 06.10.2019
  */
 
+/**
+ * Class represents a feedback <br>
+ * Source: Feedback on the cleaning service <br>
+ * Link: https://tinyurl.com/y5geyal2
+ */
 public class Feedback {
 
     private long id;
