@@ -6,6 +6,11 @@ package university.project.roomserviceondemand.models;
 
 import java.util.Date;
 
+/**
+ * Class represents a Request <br>
+ * Source: Request for Cleaning Creation <br>
+ * Link: https://tinyurl.com/y6g3hd59
+ */
 public class Request {
 
     private long id;

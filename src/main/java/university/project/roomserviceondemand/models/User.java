@@ -4,6 +4,12 @@ package university.project.roomserviceondemand.models;
  *  Date: 06.10.2019
  */
 
+
+/**
+ * Class represents a User <br>
+ * Source: Sing-Up Use Case <br>
+ * Link: https://tinyurl.com/yya5u28d
+ */
 public class User {
 
     private long id;
