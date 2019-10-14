@@ -1,7 +1,7 @@
 # Use Case Diagram 
 <img src="https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/Iteration-2/Requirements/Use%20Case%20Diagram.png?raw=true" width="70%" />
 
-**Terminology**
+### [Terminology](#terms)
 
 | **Term** | **Definition** |
 | --- | --- |
