@@ -1,0 +1,12 @@
+.breadcrumb {
+  background: transparent;
+}
+
+.breadcrumb-item {
+  cursor: pointer;
+}
+
+.breadcrumb-item.active {
+  color: #007bff;
+  text-decoration: underline;
+}
