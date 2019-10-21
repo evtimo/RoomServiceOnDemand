@@ -7,6 +7,7 @@ package university.project.roomserviceondemand.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -18,13 +19,16 @@ import university.project.roomserviceondemand.models.User;
 import university.project.roomserviceondemand.services.UserDetailService;
 import university.project.roomserviceondemand.services.UserService;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
  * Class handles authorization operations <br>
  * Source: Sign-In, Sign-Up Use cases <br>
  * Link: https://tinyurl.com/yya5u28d
+ *
  * @version 1.0
  */
 
@@ -48,12 +52,14 @@ public class AuthorizationController {
 //        return "signin";
 //    }
 //
+
     /**
      * Handle http-get method for authorization process <br>
+     *
      * @return http response
      */
     @GetMapping("/signUp")
-    public String signUpGet(){
+    public String signUpGet() {
         return "views/signup";
     }
 
@@ -61,10 +67,11 @@ public class AuthorizationController {
      * Handle http-post method for authorization process <br>
      * Search for user's credentials and response with found user
      * if credentials are valid, empty user otherwise
+     *
      * @return http-response
      */
     @PostMapping("/signInPost")
-    public String signIn(User user){
+    public String signIn(User user) {
         return "";
     }
 
@@ -72,34 +79,47 @@ public class AuthorizationController {
      * Handle http-post method for authorization process <br>
      * Create new user with Client role ({@link university.project.roomserviceondemand.models.Role})
      * and saves it ot hte database <br>
+     *
      * @return http response
      */
     @PostMapping("/signUpPost")
-    public String signUp(User user){
+    public String signUp(User user) {
         User byEmail = userService.findByEmail(user.getEmail());
-        if(byEmail == null){
+        if (byEmail == null) {
             userService.addUser(user);
             System.out.println(user.getEmail());
             return "redirect:/login";
-        }else{
+        } else {
             return "redirect:/signUp";
         }
     }
 
     @PostMapping("/postLogin")
-    public String postLogin(HttpSession session){
-        session.setAttribute("user", ((UserDetailService)userDetailsService).getUser());
-        System.out.println(((User)session.getAttribute("user")).getEmail());
+    public String postLogin(HttpSession session) {
+        session.setAttribute("user", ((UserDetailService) userDetailsService).getUser());
+        System.out.println(((User) session.getAttribute("user")).getEmail());
         return "redirect:/home/requests";
     }
 
 
     @GetMapping("/login")
     public String getLoginPage(Authentication authentication) {
-        if (authentication != null ) {
+        if (authentication != null) {
             return "redirect:/home/requests";
         }
         return "views/signin";
+    }
+
+    @GetMapping("/logout")
+    public String logoutDo(HttpSession session, HttpServletRequest request) {
+        SecurityContextHolder.clearContext();
+        if (session != null) {
+            session.invalidate();
+        }
+        for (Cookie cookie : request.getCookies()) {
+            cookie.setMaxAge(0);
+        }
+        return "redirect:/login";
     }
 
 }
