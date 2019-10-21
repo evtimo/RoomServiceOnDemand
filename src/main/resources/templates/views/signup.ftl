@@ -19,13 +19,13 @@
             <img class="mb-4" src="img/logo.png" alt="" width="80%">
 
             <label for="inputEmail" class="sr-only">e-mail</label>
-            <input type="text" name="email" id="inputEmail" class="form-control" placeholder="e-mail" required autofocus>
+            <input type="email" name="email" id="inputEmail" class="form-control" placeholder="e-mail" required autofocus>
 
             <label for="inputName" class="sr-only">full name</label>
-            <input type="text" id="inputName" class="form-control" placeholder="full name" required autofocus>
+            <input type="text" id="inputName" name="name" class="form-control" placeholder="full name" required autofocus>
 
             <label for="inputPhone" class="sr-only">phone</label>
-            <input type="text" id="inputPhone" class="form-control" placeholder="phone" required autofocus>
+            <input type="text" id="inputPhone" name="phoneNumber" class="form-control" placeholder="phone" required autofocus>
 
             <label for="inputPassword" class="sr-only">Password</label>
             <input type="password" id="inputPassword" name="password" class="form-control" placeholder="password" required>
