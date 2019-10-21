@@ -4,7 +4,9 @@ package university.project.roomserviceondemand.controllers;
  *  Date: 09.10.2019
  */
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import university.project.roomserviceondemand.models.Feedback;
 import university.project.roomserviceondemand.models.Request;
 import university.project.roomserviceondemand.models.User;
 import university.project.roomserviceondemand.utils.MailSender;
@@ -16,11 +18,24 @@ import university.project.roomserviceondemand.utils.MailSender;
  * Link: https://tinyurl.com/y6g3hd59
  * @version 1.0
  */
+@Controller
+@RequestMapping("/request")
 public class RequestController {
 
     User user;
     Request request;
+    Feedback feedback;
     MailSender mailSender;
+
+    /**
+     * Handles http-get method for request fetching <br>
+     * Retrieves the list of all user requests from the database<br>
+     * @return http-response
+     */
+    @GetMapping
+    public String index(){
+        return "views/requests";
+    }
 
     /**
      * Handles http-post method for request ({@link Request}) creation <br>
@@ -29,17 +44,6 @@ public class RequestController {
      */
     @PostMapping
     public String create(){
-        return "";
-    }
-
-    /**
-     * Handles http-get method for request fetching <br>
-     * Retrieves the request with specific id from the database,
-     * if request id is not specified, return all requests from the database <br>
-     * @return http-response
-     */
-    @GetMapping
-    public String get(){
         return "";
     }
 
@@ -54,8 +58,14 @@ public class RequestController {
         return "";
     }
 
-
-
-
-
+    /**
+     * Handles http-post method for feedback creation <br>
+     * Creates new feedback for specific request and
+     * saves it to the database <br>
+     * @return http-response
+     */
+    @PostMapping("/feedback")
+    public String postFeedback(){
+        return "";
+    }
 }
