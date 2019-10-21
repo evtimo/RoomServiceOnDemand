@@ -4,12 +4,19 @@ package university.project.roomserviceondemand.controllers;
  *  Date: 09.10.2019
  */
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import university.project.roomserviceondemand.models.Feedback;
 import university.project.roomserviceondemand.models.Request;
 import university.project.roomserviceondemand.models.User;
+import university.project.roomserviceondemand.services.RequestService;
+import university.project.roomserviceondemand.services.UserService;
 import university.project.roomserviceondemand.utils.MailSender;
+
+import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  * Class handles request operations <br>
@@ -21,11 +28,19 @@ import university.project.roomserviceondemand.utils.MailSender;
 @Controller
 @RequestMapping("/request")
 public class RequestController {
+    private final RequestService requestService;
+    private final UserService userService;
 
     User user;
     Request request;
     Feedback feedback;
     MailSender mailSender;
+
+    public RequestController(RequestService requestService, UserService userService) {
+        this.requestService = requestService;
+        this.userService = userService;
+    }
+
 
     /**
      * Handles http-get method for request fetching <br>
@@ -33,7 +48,16 @@ public class RequestController {
      * @return http-response
      */
     @GetMapping
-    public String index(){
+    public String index(Model model, HttpSession session){
+        User user = (User) session.getAttribute("user");
+        String email = user.getEmail();
+        user = userService.findByEmail(email);
+
+        List<Request> requestList = requestService.getAllByUserId(user.getId());
+
+        model.addAttribute("currentUser", user);
+        model.addAttribute("requestList", requestList);
+
         return "views/requests";
     }
 
