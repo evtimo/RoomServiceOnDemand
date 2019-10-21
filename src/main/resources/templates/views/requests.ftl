@@ -84,4 +84,10 @@
             </div>
         </div>
     </div>
+<!-- TODO: MAKE THIS INCLUDE ONLY FOR CLIENT -->
+<#include "../views/feedback.ftl">
+<#include "../views/create-request-modal.ftl">
+<!-- TODO: MAKE THIS INCLUDE ONLY FOR ADMIN -->
+<#include "../views/request-status-change.ftl">
+    
 <#include "../components/footer.ftl">

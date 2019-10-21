@@ -25,6 +25,7 @@
 
     <!-- Custom styles for this template -->
     <link href="/css/header.css" rel="stylesheet">
+    <link href="/css/request.css" rel="stylesheet">
     <#if page_name??>
         <link href="/css/${page_name}.css" rel="stylesheet">
     </#if>
