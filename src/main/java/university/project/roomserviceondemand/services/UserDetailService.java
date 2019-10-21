@@ -6,8 +6,11 @@ package university.project.roomserviceondemand.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -36,5 +39,13 @@ public class UserDetailService implements UserDetailsService {
 
     private static Collection<? extends GrantedAuthority> getAuthorities(User user) {
         return AuthorityUtils.createAuthorityList(user.getRole().name());
+    }
+
+    public User getUser(){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (!(authentication instanceof AnonymousAuthenticationToken)) {
+            String currentUserName = authentication.getName();
+            return userRepository.findByEmail(currentUserName).orElse(null);
+        } return null;
     }
 }
