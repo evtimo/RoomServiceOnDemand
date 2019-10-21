@@ -17,7 +17,7 @@ $(function () {
 
     });
 
-    $('#create-request').toast({
+    $('.toast-modal').toast({
         autohide: false
     });
 
