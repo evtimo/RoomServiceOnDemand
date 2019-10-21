@@ -49,6 +49,10 @@
 
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
     </form>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
 </body>
 
 </html>
