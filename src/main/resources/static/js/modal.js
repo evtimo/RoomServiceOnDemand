@@ -1,15 +1,24 @@
+$('.toast-modal').toast({
+    autohide: false
+});
+
 $('.modal-trigger').on('click', function () {
-    $('.toast.toast-modal').addClass('hide');
+    $('.toast-modal').toast('hide');
 
     var modalType = $(this).data('modal-type');
-    $('#' + modalType).removeClass('hide').toast('show');
+    var modal = $('#' + modalType);
+    modal.toast('show');
 
-    if(modalType === "feedback") {
-        $('#feedback-title').val("Room " + $(this).data('room'));
-    }
-
-    if(modalType === "request-change") {
-        $('#change-title').val("Room " + $(this).data('room'));
-        $('#change-status').val($(this).data('status'))
+    switch (modalType) {
+        case "feedback":
+            $('#feedback-title').val("Room " + $(this).data('room'));
+            break;
+        case "request-change":
+            $('#change-title').val("Room " + $(this).data('room'));
+            $('#change-status').val($(this).data('status'));
+            break;
+        default:
+            $('form', modal).get(0).reset();
+            break;
     }
 });
