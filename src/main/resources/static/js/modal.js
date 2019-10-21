@@ -17,6 +17,7 @@ $('.modal-trigger').on('click', function () {
         case "request-change":
             $('#change-title').val("Room " + $(this).data('room'));
             $('#change-status').val($(this).data('status'));
+            $('#change-id').val($(this).data('id'));
             break;
         default:
             $('form', modal).get(0).reset();
