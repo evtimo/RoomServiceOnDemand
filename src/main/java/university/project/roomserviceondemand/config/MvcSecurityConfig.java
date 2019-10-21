@@ -4,43 +4,59 @@ package university.project.roomserviceondemand.config;
  *  Date: 21.10.2019
  */
 
+import com.sun.javafx.sg.prism.NodePath;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import university.project.roomserviceondemand.services.UserDetailService;
 
 @Configuration
 @EnableWebSecurity
 public class MvcSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-                .antMatchers("/signIn", "/signUp", "/css/**", "/js/**","/img/**").permitAll()
-                .anyRequest().authenticated()
-                .and()
-                .formLogin()
-                .loginPage("/signIn")
-                .permitAll()
-                .and()
-                .logout()
-                .permitAll();
+    private UserDetailsService customUserDetailsService;
+
+    public MvcSecurityConfig(@Qualifier("global") UserDetailsService customUserDetailsService) {
+        this.customUserDetailsService = customUserDetailsService;
     }
+
 
     @Bean
-    @Override
-    public UserDetailsService userDetailsService(){
-        UserDetails user = User.withDefaultPasswordEncoder()
-                .username("u")
-                .password("1")
-                .roles("USER")
-                .build();
-
-        return new InMemoryUserDetailsManager(user);
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
+
+    @Autowired
+    public void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth
+                .userDetailsService(customUserDetailsService)
+                .passwordEncoder(passwordEncoder());
+    }
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+                .authorizeRequests()
+                    .antMatchers( "/signUp", "/signUpPost", "/css/**", "/js/**","/img/**").permitAll()
+                .anyRequest().authenticated()
+                .and()
+                    .formLogin()
+                    .loginPage("/login")
+                    .successForwardUrl("/postLogin")
+                    .permitAll()
+                .and()
+                    .logout()
+                    .permitAll();
+    }
+
 }
