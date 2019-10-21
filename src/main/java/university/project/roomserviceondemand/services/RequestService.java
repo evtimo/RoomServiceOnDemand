@@ -17,4 +17,8 @@ public class RequestService {
     public List<Request> getAllByUserId(Long userId) {
         return requestRepository.getAllByUserId(userId);
     }
+
+    public void save(Request request) {
+        requestRepository.save(request);
+    }
 }
