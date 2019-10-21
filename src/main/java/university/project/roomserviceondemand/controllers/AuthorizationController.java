@@ -4,7 +4,10 @@ package university.project.roomserviceondemand.controllers;
  *  Date: 09.10.2019
  */
 
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import university.project.roomserviceondemand.models.User;
 
@@ -14,11 +17,29 @@ import university.project.roomserviceondemand.models.User;
  * Link: https://tinyurl.com/yya5u28d
  * @version 1.0
  */
-@RestController
+@Controller
+@RequestMapping("/")
 public class AuthorizationController {
 
     User user;
 
+    /**
+     * Handle http-get method for authorization process <br>
+     * @return http-response
+     */
+    @GetMapping("/signIn")
+    public String signInGet(){
+        return "signin";
+    }
+
+    /**
+     * Handle http-get method for authorization process <br>
+     * @return http response
+     */
+    @GetMapping("/signUp")
+    public String signUpGet(){
+        return "signup";
+    }
 
     /**
      * Handle http-post method for authorization process <br>
@@ -26,7 +47,7 @@ public class AuthorizationController {
      * if credentials are valid, empty user otherwise
      * @return http-response
      */
-    @PostMapping
+    @PostMapping("/signInPost")
     public String signIn(){
         return "";
     }
@@ -37,7 +58,7 @@ public class AuthorizationController {
      * and saves it ot hte database <br>
      * @return http response
      */
-    @PostMapping
+    @PostMapping("/signUpPost")
     public String signUp(){
         return "";
     }
