@@ -1,3 +1,4 @@
+<#import "nav.ftl" as nav>
 <#-- @ftlvariable name="_csrf" type="org.springframework.security.web.csrf.CsrfToken" -->
 <#-- @ftlvariable name="error" type="java.util.Optional<String>" -->
 <!doctype html>
@@ -31,10 +32,12 @@
     </style>
     <!-- Custom styles for this template -->
     <link href="css/signup.css" rel="stylesheet">
+    <link href="css/header.css" rel="stylesheet">
 </head>
+<body style="background: #fff">
 
-<body class="text-center" style="background: #fff">
-    <form class="form-signup" method="post" action="/signUpPost">
+    <@nav.nav/>
+    <form class="text-center form-signup" method="post" action="/signUpPost">
         <img class="mb-4" src="img/logo.png" alt="" width="80%">
 
         <label for="inputEmail" class="sr-only">e-mail</label>
