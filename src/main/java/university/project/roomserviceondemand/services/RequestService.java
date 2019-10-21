@@ -24,7 +24,8 @@ public class RequestService {
         return allByUserId;
     }
 
-    public void save(Request request) {
-        requestRepository.save(request);
-    }
+    public Request getByRequestId(Long requestId) { return  requestRepository.findById(requestId).orElse(new Request()); }
+
+    public void save(Request request) { requestRepository.save(request); }
+
 }

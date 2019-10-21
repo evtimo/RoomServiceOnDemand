@@ -44,7 +44,7 @@
                                 <#if currentUser.role=="CLIENT" && request.status=="DONE">
                                     <button type="button" class="btn btn-primary btn-sm float-right modal-trigger" data-modal-type="feedback" data-room="${request.room}">Feedback</button>
                                 <#elseif currentUser.role=="ADMIN" && request.status!="DONE">
-                                    <button type="button" class="btn btn-primary btn-sm float-right modal-trigger" data-modal-type="request-change" data-status="${request.status}" data-room="${request.room}">Edit</button>
+                                    <button type="button" class="btn btn-primary btn-sm float-right modal-trigger" data-modal-type="request-change" data-status="${request.status}" data-room="${request.room}" data-id="${request.id}">Edit</button>
                                 </#if>
                             </div>
                         </div>
