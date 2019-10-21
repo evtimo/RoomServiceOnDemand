@@ -1,5 +1,5 @@
 <#macro nav>
-    <nav class="navbar navbar-expand navbar-dark header-bg">
+    <header class="navbar navbar-expand navbar-dark header-bg">
         <div class="container">
             <a class="navbar-brand" href="/">
                 <img class="header-logo" src="/img/header_logo.png" alt="">
@@ -21,5 +21,5 @@
                 </li>
             </ul>
         </div>
-    </nav>
+    </header>
 </#macro>
