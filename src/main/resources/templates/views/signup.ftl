@@ -5,7 +5,7 @@
 <#assign page_name='signup'>
 <#assign page_title='Sign Up'>
 
-<@layout.layout page_title page_title; section>
+<@layout.layout page_title page_name; section>
 
     <#if section = "scripts">
 
