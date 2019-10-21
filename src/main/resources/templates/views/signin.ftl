@@ -1,11 +1,11 @@
 <#import "../components/_layout.ftl" as layout>
 <#-- @ftlvariable name="_csrf" type="org.springframework.security.web.csrf.CsrfToken" -->
 <#-- @ftlvariable name="error" type="java.util.Optional<String>" -->
-
 <#assign page_name='signin'>
 <#assign page_title='Sign In'>
 
-<@layout.layout; section>
+<@layout.layout page_title page_name; section>
+
     <#if section = "scripts">
 
     </#if>

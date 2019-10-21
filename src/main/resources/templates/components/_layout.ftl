@@ -1,4 +1,4 @@
-<#macro layout>
+<#macro layout page_title, page_name>
     <#if !page_title??>
         <#assign page_title=''>
     </#if>
@@ -27,6 +27,10 @@
         <#nested "content">
 
         <#include "_footer.ftl">
+
+        <script src="/js/jquery-3.4.1.min.js"></script>
+        <script src="/js/bootstrap/bootstrap.min.js"></script>
+        <script src="/js/popper.min.js"></script>
 
         <#nested "scripts">
 
