@@ -1,4 +1,3 @@
-<#import "nav.ftl" as nav>
 <!doctype html>
 <html lang="en">
 
@@ -16,8 +15,6 @@
 </head>
 
 <body>
-    <@nav.nav/>
-
     <div class="container">
         <ol class="breadcrumb mb-0">
             <li class="breadcrumb-item active" aria-current="page" data-request-type="all" >All</li>
