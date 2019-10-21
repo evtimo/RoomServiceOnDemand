@@ -5,7 +5,7 @@
 <#assign page_name='requests'>
 <#assign page_title='Requests'>
 
-<@layout.layout; section>
+<@layout.layout page_title page_name; section>
     <#if section = "scripts">
 
     </#if>
