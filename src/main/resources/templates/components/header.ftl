@@ -1,3 +1,13 @@
+<#-- @ftlvariable name="page_name" type="java.util.Optional<String>" -->
+
+<#if !page_title??>
+    <#assign page_title=''>
+</#if>
+
+<#if !page_name??>
+    <#assign page_name=''>
+</#if>
+
 <!doctype html>
 <html lang="en">
 
@@ -15,7 +25,9 @@
 
     <!-- Custom styles for this template -->
     <link href="/css/header.css" rel="stylesheet">
-    <link href="/css/${page_name}.css" rel="stylesheet">
+    <#if page_name??>
+        <link href="/css/${page_name}.css" rel="stylesheet">
+    </#if>
 </head>
 
 <body>
