@@ -8,14 +8,13 @@
     <div class="toast-body">
         <form>
             <div class="form-group">
-                <label for="title">Title</label>
-                <input type="text" class="form-control" id="title" value="Room 202" disabled>
+                <label for="feedback-title">Title</label>
+                <input type="text" class="form-control" id="feedback-title" value="" disabled>
             </div>
 
             <div class="form-group">
                 <label for="title">Rate</label>
                 <div class="feedback-rate risingstar d-flex justify-content-center flex-row-reverse">
-
                     <input type="radio" id="star5" name="rating" value="5"/>
                     <label for="star5" title="5 star">
                         <i class="fas fa-star"></i>

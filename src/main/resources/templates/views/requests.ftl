@@ -42,8 +42,9 @@
                                 <p class="card-text">${request.date}</p>
                                 <span class="badge badge-secondary badge-${request.status} mb-2">${request.status.description}</span>
                                 <#if currentUser.role=="CLIENT" && request.status=="DONE">
-                                    <button type="button" class="btn btn-primary btn-sm float-right modal-trigger" data-modal-type="feedback">Feedback</button>
+                                    <button type="button" class="btn btn-primary btn-sm float-right modal-trigger" data-modal-type="feedback" data-room="${request.room}">Feedback</button>
                                 <#elseif currentUser.role=="ADMIN" && request.status!="DONE">
+                                    <button type="button" class="btn btn-primary btn-sm float-right modal-trigger" data-modal-type="request-change" data-status="${request.status}" data-room="${request.room}">Edit</button>
                                 </#if>
                             </div>
                         </div>
