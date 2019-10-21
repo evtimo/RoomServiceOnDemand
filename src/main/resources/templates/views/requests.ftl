@@ -40,72 +40,15 @@
                             <div class="card-body">
                                 <h5 class="card-title">${request.room}</h5>
                                 <p class="card-text">${request.date}</p>
-                                <span class="badge badge-secondary mb-2">${request.status}</span>
-                                <#if currentUser.role=="CLIENT" && request.status=="Done">
+                                <span class="badge badge-secondary badge-${request.status} mb-2">${request.status.description}</span>
+                                <#if currentUser.role=="CLIENT" && request.status=="DONE">
                                     <button type="button" class="btn btn-primary btn-sm float-right modal-trigger" data-modal-type="feedback">Feedback</button>
-                                <#elseif currentUser.role=="ADMIN" && request.status!="Done">
+                                <#elseif currentUser.role=="ADMIN" && request.status!="DONE">
                                 </#if>
                             </div>
                         </div>
                     </div>
                 </#list>
-
-                <div class="col-lg-3 col-md-3 col-sm-4 mb-4 request request-done">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Room 202</h5>
-                            <p class="card-text">11.01.19 10:00</p>
-                            <span class="badge badge-secondary mb-2">Done</span>
-                            <button type="button" class="btn btn-primary btn-sm float-right modal-trigger" data-modal-type="feedback">Feedback</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-4 mb-4 request request-canceled">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Room 202</h5>
-                            <p class="card-text">11.01.19 10:00</p>
-                            <span class="badge badge-danger mb-2">Canceled</span>
-                            <button type="button" class="btn btn-primary btn-sm float-right modal-trigger" data-modal-type="request-change">Edit</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-4 mb-4 request request-in-progress">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Room 202</h5>
-                            <p class="card-text">11.01.19 10:00</p>
-                            <span class="badge badge-warning mb-2">In progress</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-4 mb-4 request request-new">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Room 202</h5>
-                            <p class="card-text">11.01.19 10:00</p>
-                            <span class="badge badge-success mb-2">New</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-4 mb-4 request request-new">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Room 202</h5>
-                            <p class="card-text">11.01.19 10:00</p>
-                            <span class="badge badge-success mb-2">New</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-4 mb-4 request request-new">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Room 202</h5>
-                            <p class="card-text">11.01.19 10:00</p>
-                            <span class="badge badge-success mb-2">New</span>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </#if>
