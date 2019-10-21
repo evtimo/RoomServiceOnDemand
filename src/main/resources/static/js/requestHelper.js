@@ -21,11 +21,11 @@ $(function () {
         autohide: false
     });
 
-    $('#datepicker').datetimepicker({
-        format: 'L'
-    });
-
-    $('#timepicker').datetimepicker({
-        format: 'LT'
-    });
+    // $('#datepicker').datetimepicker({
+    //     format: 'L'
+    // });
+    //
+    // $('#timepicker').datetimepicker({
+    //     format: 'LT'
+    // });
 });
