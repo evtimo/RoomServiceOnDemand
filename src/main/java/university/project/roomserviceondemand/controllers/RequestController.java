@@ -89,9 +89,14 @@ public class RequestController {
      * and save it to the database
      * @return
      */
-    @PutMapping
-    public String update(){
-        return "";
+    @PostMapping("/update")
+    public String update(Request request){
+        Request updatedRequest = requestService.getByRequestId(request.getId());
+        updatedRequest.setStatus(request.getStatus());
+
+        requestService.save(updatedRequest);
+
+        return "redirect:/requests";
     }
 
     /**
