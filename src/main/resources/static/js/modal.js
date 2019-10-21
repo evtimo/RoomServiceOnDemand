@@ -1,6 +1,6 @@
 $('.modal-trigger').on('click', function () {
-    $('.toast.toast-modal').toast('hide');
+    $('.toast.toast-modal').addClass('hide');
 
     var modalType = $(this).data('modal-type');
-    $('#' + modalType).toast('show');
+    $('#' + modalType).removeClass('hide').toast('show');
 });
