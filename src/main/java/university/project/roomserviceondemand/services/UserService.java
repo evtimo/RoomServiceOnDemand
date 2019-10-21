@@ -23,7 +23,6 @@ public class UserService {
 
     public boolean addUser(User user){
         Optional<User> userDB = userRepository.findByEmail(user.getEmail());
-        System.out.println(userDB);
         if(userDB.isPresent()){
             return false;
         }
@@ -31,6 +30,11 @@ public class UserService {
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
         String password = bCryptPasswordEncoder.encode(user.getPassword());
         user.setPassword(password);
+        String[] s = user.getName().trim().split(" ");
+        if(s.length >= 2){
+            user.setName(s[0]);
+            user.setSurname(s[1]);
+        }
         user.setRole(Role.CLIENT);
         userRepository.save(user);
 
