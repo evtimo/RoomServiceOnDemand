@@ -24,18 +24,18 @@
             <button type="button" class="mt-2 mb-2 btn btn-primary btn-md modal-trigger" data-modal-type="create-request">Create new</button>
 
             <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item active" aria-current="page" data-request-type="all" >All</li>
-                <li class="breadcrumb-item" aria-current="page" data-request-type="new" >New</li>
-                <li class="breadcrumb-item" aria-current="page" data-request-type="in-progress" >In progress</li>
-                <li class="breadcrumb-item" aria-current="page" data-request-type="canceled" >Canceled</li>
-                <li class="breadcrumb-item" aria-current="page" data-request-type="done" >Done</li>
+                <li class="breadcrumb-item active" aria-current="page" data-request-type="ALL">All</li>
+                <li class="breadcrumb-item" aria-current="page" data-request-type="NEW" >New</li>
+                <li class="breadcrumb-item" aria-current="page" data-request-type="PROGRESS" >In progress</li>
+                <li class="breadcrumb-item" aria-current="page" data-request-type="CANCELED" >Canceled</li>
+                <li class="breadcrumb-item" aria-current="page" data-request-type="DONE" >Done</li>
             </ol>
 
             <hr class="mt-2 mb-5">
 
             <div class="row">
                 <#list requestList as request>
-                    <div class="col-lg-3 col-md-3 col-sm-4 mb-4 request request-done">
+                    <div class="col-lg-3 col-md-3 col-sm-4 mb-4 request request-${request.status}">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">${request.room}</h5>

@@ -9,12 +9,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import university.project.roomserviceondemand.models.Feedback;
 import university.project.roomserviceondemand.models.Request;
+import university.project.roomserviceondemand.models.Status;
 import university.project.roomserviceondemand.models.User;
 import university.project.roomserviceondemand.services.RequestService;
 import university.project.roomserviceondemand.services.UserService;
 import university.project.roomserviceondemand.utils.MailSender;
 
 import javax.servlet.http.HttpSession;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -64,8 +66,19 @@ public class RequestController {
      * @return http-response
      */
     @PostMapping
-    public String create(){
-        return "";
+    public String create(HttpSession session, @RequestParam("room") int room, @RequestParam("datetime") Date datetime){
+
+        User user = (User) session.getAttribute("user");
+
+        Request request = new Request();
+        request.setRoom(room);
+        request.setDate(datetime);
+        request.setStatus(Status.NEW);
+        request.setUser(user);
+
+        requestService.save(request);
+
+        return "redirect:/requests";
     }
 
     /**
