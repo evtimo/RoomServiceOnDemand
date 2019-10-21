@@ -1,7 +1,8 @@
 <#-- @ftlvariable name="_csrf" type="org.springframework.security.web.csrf.CsrfToken" -->
 <#-- @ftlvariable name="error" type="java.util.Optional<String>" -->
 
-<#assign page_css='signin'>
+<#assign page_name='signin'>
+<#assign page_title='Sign In'>
 
 <#include "../components/header.ftl">
 
@@ -16,6 +17,5 @@
     <input type="hidden" name="_csrf" value="${_csrf.token}">
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 </form>
-
 
 <#include "../components/footer.ftl">
