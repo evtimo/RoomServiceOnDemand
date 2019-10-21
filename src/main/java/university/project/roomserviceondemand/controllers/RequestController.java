@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import university.project.roomserviceondemand.models.*;
+import university.project.roomserviceondemand.services.FeedbackService;
 import university.project.roomserviceondemand.services.RequestService;
 import university.project.roomserviceondemand.services.UserService;
 import university.project.roomserviceondemand.utils.MailSender;
@@ -28,15 +29,17 @@ import java.util.List;
 public class RequestController {
     private final RequestService requestService;
     private final UserService userService;
+    private final FeedbackService feedbackService;
 
     User user;
     Request request;
     Feedback feedback;
     MailSender mailSender;
 
-    public RequestController(RequestService requestService, UserService userService) {
+    public RequestController(RequestService requestService, UserService userService, FeedbackService feedbackService) {
         this.requestService = requestService;
         this.userService = userService;
+        this.feedbackService = feedbackService;
     }
 
 
@@ -106,7 +109,9 @@ public class RequestController {
      * @return http-response
      */
     @PostMapping("/feedback")
-    public String postFeedback(){
-        return "";
+    public String postFeedback(Feedback feedback){
+        feedbackService.save(feedback);
+
+        return "redirect:/requests";
     }
 }
