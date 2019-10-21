@@ -40,78 +40,26 @@
                             <div class="card-body">
                                 <h5 class="card-title">${request.room}</h5>
                                 <p class="card-text">${request.date}</p>
-                                <span class="badge badge-secondary mb-2">${request.status}</span>
-                                <#if currentUser.role=="CLIENT" && request.status=="Done">
-                                    <button type="button" class="btn btn-primary btn-sm float-right modal-trigger" data-modal-type="feedback">Feedback</button>
-                                <#elseif currentUser.role=="ADMIN" && request.status!="Done">
+                                <span class="badge badge-secondary badge-${request.status} mb-2">${request.status.description}</span>
+                                <#if currentUser.role=="CLIENT" && request.status=="DONE">
+                                    <button type="button" class="btn btn-primary btn-sm float-right modal-trigger" data-modal-type="feedback" data-room="${request.room}">Feedback</button>
+                                <#elseif currentUser.role=="ADMIN" && request.status!="DONE">
+                                    <button type="button" class="btn btn-primary btn-sm float-right modal-trigger" data-modal-type="request-change" data-status="${request.status}" data-room="${request.room}">Edit</button>
                                 </#if>
                             </div>
                         </div>
                     </div>
                 </#list>
-
-                <div class="col-lg-3 col-md-3 col-sm-4 mb-4 request request-done">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Room 202</h5>
-                            <p class="card-text">11.01.19 10:00</p>
-                            <span class="badge badge-secondary mb-2">Done</span>
-                            <button type="button" class="btn btn-primary btn-sm float-right modal-trigger" data-modal-type="feedback">Feedback</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 mb-4 request request-canceled">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Room 202</h5>
-                            <p class="card-text">11.01.19 10:00</p>
-                            <span class="badge badge-danger mb-2">Canceled</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 mb-4 request request-in-progress">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Room 202</h5>
-                            <p class="card-text">11.01.19 10:00</p>
-                            <span class="badge badge-warning mb-2">In progress</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 mb-4 request request-new">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Room 202</h5>
-                            <p class="card-text">11.01.19 10:00</p>
-                            <span class="badge badge-success mb-2">New</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 mb-4 request request-new">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Room 202</h5>
-                            <p class="card-text">11.01.19 10:00</p>
-                            <span class="badge badge-success mb-2">New</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 mb-4 request request-new">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Room 202</h5>
-                            <p class="card-text">11.01.19 10:00</p>
-                            <span class="badge badge-success mb-2">New</span>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </#if>
 <!-- TODO: MAKE THIS INCLUDE ONLY FOR CLIENT -->
+<#if currentUser.role == "CLIENT">
 <#include "../views/feedback.ftl">
 <#include "../views/create-request-modal.ftl">
+</#if>
 <!-- TODO: MAKE THIS INCLUDE ONLY FOR ADMIN -->
+<#if currentUser.role == "ADMIN">
 <#include "../views/request-status-change.ftl">
-
+</#if>
 </@layout.layout>
