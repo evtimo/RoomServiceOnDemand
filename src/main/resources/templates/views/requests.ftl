@@ -3,6 +3,9 @@
 
 <#include "../components/header.ftl">
     <div class="container">
+        <h1 class="mt-5">My cleaning requests</h1>
+        <button type="button" class="mt-2 mb-2 btn btn-primary btn-md">Create new</button>
+
         <ol class="breadcrumb mb-0">
             <li class="breadcrumb-item active" aria-current="page" data-request-type="all" >All</li>
             <li class="breadcrumb-item" aria-current="page" data-request-type="new" >New</li>
