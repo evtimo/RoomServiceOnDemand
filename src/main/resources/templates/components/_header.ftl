@@ -1,37 +1,8 @@
 <#-- @ftlvariable name="page_name" type="java.util.Optional<String>" -->
 
-<#if !page_title??>
-    <#assign page_title=''>
-</#if>
-
 <#if !page_name??>
     <#assign page_name=''>
 </#if>
-
-<!doctype html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <title>${page_title} | Room Service on Demand</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
-
-    <link href="/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet">
-    <link href="/css/fontawesome/css/all.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="/css/header.css" rel="stylesheet">
-    <link href="/css/request.css" rel="stylesheet">
-    <#if page_name??>
-        <link href="/css/${page_name}.css" rel="stylesheet">
-    </#if>
-</head>
-
-<body>
 
 <header class="navbar navbar-expand navbar-dark header-bg">
     <div class="container">

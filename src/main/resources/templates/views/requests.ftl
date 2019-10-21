@@ -89,5 +89,5 @@
 <#include "../views/create-request-modal.ftl">
 <!-- TODO: MAKE THIS INCLUDE ONLY FOR ADMIN -->
 <#include "../views/request-status-change.ftl">
-    
+
 <#include "../components/footer.ftl">
