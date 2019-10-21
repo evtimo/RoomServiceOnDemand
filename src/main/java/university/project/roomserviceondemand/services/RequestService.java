@@ -14,8 +14,14 @@ public class RequestService {
         this.requestRepository = requestRepository;
     }
 
+    public List<Request> findAll() {
+        return requestRepository.findAll();
+    }
+
     public List<Request> getAllByUserId(Long userId) {
-        return requestRepository.getAllByUserId(userId);
+        List<Request> allByUserId = requestRepository.getAllByUserId(userId);
+        allByUserId.sort((t1,t2) -> t2.getDate().compareTo(t1.getDate()));
+        return allByUserId;
     }
 
     public void save(Request request) {
