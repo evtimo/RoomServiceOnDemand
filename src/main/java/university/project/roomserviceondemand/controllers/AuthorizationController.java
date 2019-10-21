@@ -5,13 +5,21 @@ package university.project.roomserviceondemand.controllers;
  */
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import university.project.roomserviceondemand.models.User;
+import university.project.roomserviceondemand.services.UserDetailService;
 import university.project.roomserviceondemand.services.UserService;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 /**
  * Class handles authorization operations <br>
@@ -24,9 +32,11 @@ import university.project.roomserviceondemand.services.UserService;
 public class AuthorizationController {
 
     private final UserService userService;
+    private final UserDetailsService userDetailsService;
 
-    public AuthorizationController(UserService userService) {
+    public AuthorizationController(UserService userService, @Qualifier("global") UserDetailsService userDetailsService) {
         this.userService = userService;
+        this.userDetailsService = userDetailsService;
     }
 
 //    /**
@@ -77,8 +87,19 @@ public class AuthorizationController {
     }
 
     @PostMapping("/postLogin")
-    public String postLogin(){
+    public String postLogin(HttpSession session){
+        session.setAttribute("user", ((UserDetailService)userDetailsService).getUser());
+        System.out.println(((User)session.getAttribute("user")).getEmail());
         return "redirect:/home/requests";
+    }
+
+
+    @GetMapping("/login")
+    public String getLoginPage(Authentication authentication) {
+        if (authentication != null ) {
+            return "redirect:/home/requests";
+        }
+        return "views/signin";
     }
 
 }
