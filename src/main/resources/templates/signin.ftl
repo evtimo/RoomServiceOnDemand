@@ -35,11 +35,11 @@
     <link href="css/header.css" rel="stylesheet">
 </head>
 
-<body class="text-center" style="background: #fff">
+<body style="background: #fff">
 
     <@nav.nav/>
 
-    <form class="form-signin" method="post" action="/login">
+    <form class="text-center form-signin" method="post" action="/login">
         <img class="mb-4" src="img/logo.png" alt="" width="80%">
 
         <label for="inputEmail" class="sr-only">e-mail</label>
