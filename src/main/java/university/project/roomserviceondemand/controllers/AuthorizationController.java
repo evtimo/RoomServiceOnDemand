@@ -88,13 +88,13 @@ public class AuthorizationController {
     public String postLogin(HttpSession session) {
         session.setAttribute("user", ((UserDetailService) userDetailsService).getUser());
         System.out.println(((User) session.getAttribute("user")).getEmail());
-        return "redirect:/home/request";
+        return "redirect:/request";
     }
 
     @GetMapping("/login")
     public String getLoginPage(Authentication authentication) {
         if (authentication != null) {
-            return "redirect:/home/request";
+            return "redirect:/request";
         }
         return "views/signin";
     }

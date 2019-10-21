@@ -34,6 +34,22 @@
             <hr class="mt-2 mb-5">
 
             <div class="row">
+                <#list requestList as request>
+                    <div class="col-lg-3 col-md-3 col-sm-4 mb-4 request request-done">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">${request.room}</h5>
+                                <p class="card-text">${request.date}</p>
+                                <span class="badge badge-secondary mb-2">${request.status}</span>
+                                <#if currentUser.role=="CLIENT" && request.status=="Done">
+                                    <button type="button" class="btn btn-primary btn-sm float-right modal-trigger" data-modal-type="feedback">Feedback</button>
+                                <#elseif currentUser.role=="ADMIN" && request.status!="Done">
+                                </#if>
+                            </div>
+                        </div>
+                    </div>
+                </#list>
+
                 <div class="col-lg-3 col-md-3 col-sm-4 mb-4 request request-done">
                     <div class="card">
                         <div class="card-body">
