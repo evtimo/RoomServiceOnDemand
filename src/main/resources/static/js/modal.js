@@ -5,11 +5,12 @@ $('.modal-trigger').on('click', function () {
     $('#' + modalType).removeClass('hide').toast('show');
 
     if(modalType === "feedback") {
-        $('#feedback-title').val("Room " + $(this).data('room'));
+        $('#feedback-title').val($(this).data('room'));
     }
 
     if(modalType === "request-change") {
-        $('#change-title').val("Room " + $(this).data('room'));
+        $('#change-id').val($(this).data('id'));
         $('#change-status').val($(this).data('status'))
+        $('#change-title').val($(this).data('room'))
     }
 });
