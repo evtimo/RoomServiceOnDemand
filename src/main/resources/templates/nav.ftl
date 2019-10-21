@@ -17,7 +17,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Sign Up</a>
+                    <a class="nav-link" href="/signUp">Sign Up</a>
                 </li>
             </ul>
         </div>
