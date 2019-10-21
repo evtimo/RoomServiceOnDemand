@@ -53,9 +53,6 @@ public class MvcSecurityConfig extends WebSecurityConfigurerAdapter {
                     .formLogin()
                     .loginPage("/login")
                     .successForwardUrl("/postLogin")
-                    .permitAll()
-                .and()
-                    .logout()
                     .permitAll();
     }
 
