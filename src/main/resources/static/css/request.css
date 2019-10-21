@@ -52,3 +52,23 @@
     color: #007bff;
     text-decoration: underline;
 }
+
+.badge-NEW {
+    color: #fff;
+    background-color: #28a745;
+}
+
+.badge-PROGRESS {
+    color: #212529;
+    background-color: #ffc107;
+}
+
+.badge-CANCELED {
+    color: #fff;
+    background-color: #dc3545;
+}
+
+.badge-DONE {
+    color: #fff;
+    background-color: #6c757d;
+}
