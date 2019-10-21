@@ -14,7 +14,7 @@ public class HomeController {
 
     @GetMapping("/requests")
     public String home(){
-        return "requests";
+        return "views/requests";
     }
 
 }
