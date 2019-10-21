@@ -86,8 +86,9 @@ public class AuthorizationController {
 
     @PostMapping("/postLogin")
     public String postLogin(HttpSession session) {
-        session.setAttribute("user", ((UserDetailService) userDetailsService).getUser());
-        System.out.println(((User) session.getAttribute("user")).getEmail());
+        User user = ((UserDetailService) userDetailsService).getUser();
+        User userFull = userService.findByEmail(user.getEmail());
+        session.setAttribute("user", userFull);
         return "redirect:/request";
     }
 
