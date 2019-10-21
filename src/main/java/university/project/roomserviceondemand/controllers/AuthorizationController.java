@@ -43,16 +43,6 @@ public class AuthorizationController {
         this.userDetailsService = userDetailsService;
     }
 
-//    /**
-//     * Handle http-get method for authorization process <br>
-//     * @return http-response
-//     */
-//    @GetMapping("/signIn")
-//    public String signInGet(){
-//        return "signin";
-//    }
-//
-
     /**
      * Handle http-get method for authorization process <br>
      *
@@ -98,14 +88,13 @@ public class AuthorizationController {
     public String postLogin(HttpSession session) {
         session.setAttribute("user", ((UserDetailService) userDetailsService).getUser());
         System.out.println(((User) session.getAttribute("user")).getEmail());
-        return "redirect:/home/requests";
+        return "redirect:/home/request";
     }
-
 
     @GetMapping("/login")
     public String getLoginPage(Authentication authentication) {
         if (authentication != null) {
-            return "redirect:/home/requests";
+            return "redirect:/home/request";
         }
         return "views/signin";
     }
@@ -121,5 +110,4 @@ public class AuthorizationController {
         }
         return "redirect:/login";
     }
-
 }

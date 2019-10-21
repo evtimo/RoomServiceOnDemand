@@ -19,6 +19,10 @@
 
     <#if section="content">
         <div class="container">
+
+            <h1 class="mt-5">My cleaning requests</h1>
+            <button type="button" class="mt-2 mb-2 btn btn-primary btn-md modal-trigger" data-modal-type="create-request">Create new</button>
+
             <ol class="breadcrumb mb-0">
                 <li class="breadcrumb-item active" aria-current="page" data-request-type="all" >All</li>
                 <li class="breadcrumb-item" aria-current="page" data-request-type="new" >New</li>
@@ -37,16 +41,6 @@
                             <p class="card-text">11.01.19 10:00</p>
                             <span class="badge badge-secondary mb-2">Done</span>
                             <button type="button" class="btn btn-primary btn-sm float-right modal-trigger" data-modal-type="feedback">Feedback</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-4 mb-4 request request-done">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Room 202</h5>
-                            <p class="card-text">11.01.19 10:00</p>
-                            <span class="badge badge-secondary mb-2">Done</span>
-                            <a href="#" class="btn btn-primary btn-sm float-right">Feedback</a>
                         </div>
                     </div>
                 </div>
