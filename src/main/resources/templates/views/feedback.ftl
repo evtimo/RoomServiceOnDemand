@@ -1,4 +1,4 @@
-<div id="request-feedback" class="toast toast-modal hide" role="alert" aria-live="assertive" aria-atomic="true">
+<div id="feedback" class="toast toast-modal hide" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-header">
         <strong class="mr-auto">Request status change</strong>
         <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">

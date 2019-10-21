@@ -7,7 +7,11 @@
 
 <@layout.layout page_title page_name; section>
     <#if section = "scripts">
+        <script src="/js/moment.js"></script>
+        <script src="/js/tempusdominus-bootstrap-4.min.js"></script>
 
+        <script src="/js/requestHelper.js"></script>
+        <script src="/js/modal.js"></script>
     </#if>
     <#if section = "styles">
         <link rel="stylesheet" href="/css/request.css" />
@@ -32,7 +36,7 @@
                             <h5 class="card-title">Room 202</h5>
                             <p class="card-text">11.01.19 10:00</p>
                             <span class="badge badge-secondary mb-2">Done</span>
-                            <button type="button" class="btn btn-primary btn-sm float-right">Feedback</button>
+                            <button type="button" class="btn btn-primary btn-sm float-right modal-trigger" data-modal-type="feedback">Feedback</button>
                         </div>
                     </div>
                 </div>
