@@ -39,3 +39,16 @@
 .feedback-rate>input:hover~label {
     color: #ffca08;
 }
+
+.breadcrumb {
+    background: transparent;
+}
+
+.breadcrumb-item {
+    cursor: pointer;
+}
+
+.breadcrumb-item.active {
+    color: #007bff;
+    text-decoration: underline;
+}
