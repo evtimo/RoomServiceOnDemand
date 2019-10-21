@@ -1,3 +1,4 @@
+<#import "nav.ftl" as nav>
 <!doctype html>
 <html lang="en">
 
@@ -29,9 +30,13 @@
     </style>
     <!-- Custom styles for this template -->
     <link href="css/signin.css" rel="stylesheet">
+    <link href="css/header.css" rel="stylesheet">
 </head>
 
 <body class="text-center" style="background: #fff">
+
+    <@nav.nav/>
+
     <form class="form-signin">
         <img class="mb-4" src="img/logo.png" alt="" width="80%">
 
@@ -43,6 +48,10 @@
 
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
     </form>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
 </body>
 
 </html>
