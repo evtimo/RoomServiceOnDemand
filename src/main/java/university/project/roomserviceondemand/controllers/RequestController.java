@@ -4,7 +4,6 @@ package university.project.roomserviceondemand.controllers;
  *  Date: 09.10.2019
  */
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -50,8 +49,6 @@ public class RequestController {
     @GetMapping
     public String index(Model model, HttpSession session){
         User user = (User) session.getAttribute("user");
-        String email = user.getEmail();
-        user = userService.findByEmail(email);
 
         List<Request> requestList = requestService.getAllByUserId(user.getId());
 
