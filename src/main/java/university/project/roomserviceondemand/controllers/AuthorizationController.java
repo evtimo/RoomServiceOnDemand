@@ -44,7 +44,7 @@ public class AuthorizationController {
      */
     @GetMapping("/signUp")
     public String signUpGet(){
-        return "signup";
+        return "views/signup";
     }
 
     /**

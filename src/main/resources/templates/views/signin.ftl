@@ -1,12 +1,9 @@
-<#import "nav.ftl" as nav>
 <#-- @ftlvariable name="_csrf" type="org.springframework.security.web.csrf.CsrfToken" -->
 <#-- @ftlvariable name="error" type="java.util.Optional<String>" -->
 
 <#assign page_css='signin'>
 
 <#include "../components/header.ftl">
-
-<@nav.nav/>
 
 <form class="text-center form-signin" method="post" action="/login">
     <img class="mb-4" src="img/logo.png" alt="" width="80%">

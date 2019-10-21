@@ -1,4 +1,3 @@
-<#import "nav.ftl" as nav>
 <#-- @ftlvariable name="_csrf" type="org.springframework.security.web.csrf.CsrfToken" -->
 <#-- @ftlvariable name="error" type="java.util.Optional<String>" -->
 <!doctype html>
@@ -36,7 +35,6 @@
 </head>
 <body style="background: #fff">
 
-    <@nav.nav/>
     <form class="text-center form-signup" method="post" action="/signUpPost">
         <img class="mb-4" src="img/logo.png" alt="" width="80%">
 
