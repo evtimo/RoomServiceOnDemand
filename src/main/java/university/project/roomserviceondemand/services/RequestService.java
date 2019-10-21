@@ -15,7 +15,9 @@ public class RequestService {
     }
 
     public List<Request> findAll() {
-        return requestRepository.findAll();
+        List<Request> requestList =  requestRepository.findAll();
+        requestList.sort((t1,t2) -> t2.getDate().compareTo(t1.getDate()));
+        return requestList;
     }
 
     public List<Request> getAllByUserId(Long userId) {
