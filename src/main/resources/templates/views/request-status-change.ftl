@@ -8,17 +8,17 @@
     <div class="toast-body">
         <form>
             <div class="form-group">
-                <label for="title">Title</label>
-                <input type="text" class="form-control" id="title" value="Room 202" disabled>
+                <label for="change-title">Title</label>
+                <input type="text" class="form-control" id="change-title" value="Room 202" disabled>
             </div>
 
             <div class="form-group">
                 <label for="status">Status</label>
-                <select class="form-control" id="status">
-                    <option selected>New</option>
-                    <option>In progess</option>
-                    <option>Cancelled</option>
-                    <option>Done</option>
+                <select class="form-control" id="change-status">
+                    <option value="NEW">New</option>
+                    <option value="PROGRESS">In progress</option>
+                    <option value="CANCELED">Cancelled</option>
+                    <option value="DONE">Done</option>
                 </select>
             </div>
 
