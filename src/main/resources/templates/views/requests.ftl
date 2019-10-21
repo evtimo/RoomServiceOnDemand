@@ -54,9 +54,12 @@
         </div>
     </#if>
 <!-- TODO: MAKE THIS INCLUDE ONLY FOR CLIENT -->
+<#if currentUser.role == "CLIENT">
 <#include "../views/feedback.ftl">
 <#include "../views/create-request-modal.ftl">
+</#if>
 <!-- TODO: MAKE THIS INCLUDE ONLY FOR ADMIN -->
+<#if currentUser.role == "ADMIN">
 <#include "../views/request-status-change.ftl">
-
+</#if>
 </@layout.layout>
