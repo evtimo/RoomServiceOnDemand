@@ -44,16 +44,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 mb-4 request request-canceled">
+                <div class="col-lg-3 col-md-3 col-sm-4 mb-4 request request-canceled">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Room 202</h5>
                             <p class="card-text">11.01.19 10:00</p>
                             <span class="badge badge-danger mb-2">Canceled</span>
+                            <button type="button" class="btn btn-primary btn-sm float-right modal-trigger" data-modal-type="request-change">Edit</button>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 mb-4 request request-in-progress">
+                <div class="col-lg-3 col-md-3 col-sm-4 mb-4 request request-in-progress">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Room 202</h5>
@@ -62,7 +63,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 mb-4 request request-new">
+                <div class="col-lg-3 col-md-3 col-sm-4 mb-4 request request-new">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Room 202</h5>
@@ -71,7 +72,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 mb-4 request request-new">
+                <div class="col-lg-3 col-md-3 col-sm-4 mb-4 request request-new">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Room 202</h5>
@@ -80,7 +81,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 mb-4 request request-new">
+                <div class="col-lg-3 col-md-3 col-sm-4 mb-4 request request-new">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Room 202</h5>
