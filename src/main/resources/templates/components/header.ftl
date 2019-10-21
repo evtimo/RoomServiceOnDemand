@@ -5,17 +5,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <title></title>
+    <title>${page_title} | Room Service on Demand</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
 
-    <link href="css/tempusdominus-bootstrap-4.min.css" rel="stylesheet">
-    <link href="css/fontawesome/css/all.min.css" rel="stylesheet">
+    <link href="/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet">
+    <link href="/css/fontawesome/css/all.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/request.css" rel="stylesheet">
-    <link href="css/${page_css}.css" rel="stylesheet">
+    <link href="/css/header.css" rel="stylesheet">
+    <link href="/css/${page_name}.css" rel="stylesheet">
 </head>
 
 <body>
@@ -38,7 +38,13 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/signUp">Sign Up</a>
+                <#if page_name=='signin'>
+                    <a class="nav-link" href="/signUp">Sign Up</a>
+                <#elseif page_name=='signup'>
+                    <a class="nav-link" href="/login">Sign In</a>
+                <#else>
+                    <a class="nav-link" href="/logout">Log Out</a>
+                </#if>
             </li>
         </ul>
     </div>

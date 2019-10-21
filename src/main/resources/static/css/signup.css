@@ -1,6 +1,7 @@
 html,
 body {
   height: 100%;
+  background: #fff;
 }
 
 body {
@@ -39,4 +40,19 @@ body {
 
 .form-signup input[type="text"] {
   border-radius: 0;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
 }
