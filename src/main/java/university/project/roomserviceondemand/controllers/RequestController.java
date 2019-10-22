@@ -4,12 +4,13 @@ package university.project.roomserviceondemand.controllers;
  *  Date: 09.10.2019
  */
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import university.project.roomserviceondemand.models.*;
 import university.project.roomserviceondemand.services.FeedbackService;
-import university.project.roomserviceondemand.services.RequestService;
+import university.project.roomserviceondemand.services.*;
 import university.project.roomserviceondemand.services.UserService;
 import university.project.roomserviceondemand.utils.MailSender;
 
@@ -27,19 +28,22 @@ import java.util.List;
 @Controller
 @RequestMapping("/request")
 public class RequestController {
+
     private final RequestService requestService;
     private final UserService userService;
     private final FeedbackService feedbackService;
+    private final GMailSender gMailSender;
 
     User user;
     Request request;
     Feedback feedback;
     MailSender mailSender;
 
-    public RequestController(RequestService requestService, UserService userService, FeedbackService feedbackService) {
+    public RequestController(RequestService requestService, UserService userService, FeedbackService feedbackService, GMailSender gMailSender) {
         this.requestService = requestService;
         this.userService = userService;
         this.feedbackService = feedbackService;
+        this.gMailSender = gMailSender;
     }
 
 
@@ -111,7 +115,8 @@ public class RequestController {
     @PostMapping("/feedback")
     public String postFeedback(Feedback feedback){
         feedbackService.save(feedback);
-
+        String message = "You have a new feedback for room "+ feedback.getRequest().getRoom() + " : " + feedback.getMessage();
+        gMailSender.send("roomserviceondemand@gmail.com", "progingisfun@gmail.com", message);
         return "redirect:/requests";
     }
 }
