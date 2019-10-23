@@ -22,11 +22,11 @@ public class GMailSender implements MailSender {
     }
 
     @Override
-    public void send(String from, String to, String text) {
+    public void send(String from, String to, String text, String subject) {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom(from);
         message.setTo(to);
-        message.setSubject("You get feedback");
+        message.setSubject(subject);
         message.setText(text);
 
         javaMailSender.send(message);
