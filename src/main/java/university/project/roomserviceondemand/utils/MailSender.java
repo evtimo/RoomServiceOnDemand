@@ -15,6 +15,6 @@ public interface MailSender {
     /**
      * Send mail message
      */
-    void send(String from, String to, String text);
+    void send(String from, String to, String text, String subject);
 
 }

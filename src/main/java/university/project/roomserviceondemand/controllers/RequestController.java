@@ -87,6 +87,10 @@ public class RequestController {
 
         requestService.save(request);
 
+        String message = "You have a new cleaning request from " + user.getName() + " in the room " + room;
+        gMailSender.send("roomserviceondemand@gmail.com", "roomserviceondemand@gmail.com", message, "New Cleaning Request: [Room: " + room +"]");
+
+
         return "redirect:/requests";
     }
 
@@ -97,11 +101,15 @@ public class RequestController {
      * @return
      */
     @PostMapping("/update")
-    public String update(Request request){
+    public String update(Request request, @RequestParam("comment") String comment){
         Request updatedRequest = requestService.getByRequestId(request.getId());
+        String previousStatus = updatedRequest.getStatus().getDescription();
         updatedRequest.setStatus(request.getStatus());
 
         requestService.save(updatedRequest);
+
+        String message = "Status of your request created for the date [" + updatedRequest.getDate() + "] was changed from [" + previousStatus + "] to ["+ updatedRequest.getStatus().getDescription() +"]. With comment: " + comment;
+        gMailSender.send("roomserviceondemand@gmail.com", updatedRequest.getUser().getEmail(), message, "Cleaning request status update");
 
         return "redirect:/requests";
     }
@@ -116,7 +124,7 @@ public class RequestController {
     public String postFeedback(Feedback feedback){
         feedbackService.save(feedback);
         String message = "You have a new feedback for room "+ feedback.getRequest().getRoom() + " : " + feedback.getMessage();
-        gMailSender.send("roomserviceondemand@gmail.com", "progingisfun@gmail.com", message);
+        gMailSender.send("roomserviceondemand@gmail.com", "roomserviceondemand@gmail.com", message, "New feedback [Room: " + feedback.getRequest().getRoom() + "]");
         return "redirect:/requests";
     }
 }

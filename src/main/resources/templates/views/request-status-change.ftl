@@ -28,7 +28,7 @@
 
             <div class="form-group">
                 <label for="comment">Comment</label>
-                <textarea class="form-control" id="comment" rows="3"></textarea>
+                <textarea name="comment" class="form-control" id="comment" rows="3"></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary">Change</button>
