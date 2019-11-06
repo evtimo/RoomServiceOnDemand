@@ -4,8 +4,21 @@ package university.project.roomserviceondemand.models;
  *  Date: 06.10.2019
  */
 
+
+import javax.persistence.*;
+
+/**
+ * Class represents a User <br>
+ * Source: Sing-Up Use Case <br>
+ * Link: https://tinyurl.com/yya5u28d
+ */
+
+@Entity
+@Table(name = "users")
 public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     private String email;
@@ -16,6 +29,7 @@ public class User {
 
     private String phoneNumber;
 
+    @Enumerated(value = EnumType.STRING)
     private Role role;
 
     public User() {

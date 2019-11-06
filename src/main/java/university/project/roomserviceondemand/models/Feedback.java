@@ -4,13 +4,27 @@ package university.project.roomserviceondemand.models;
  *  Date: 06.10.2019
  */
 
+import javax.persistence.*;
+
+/**
+ * Class represents a feedback <br>
+ * Source: Feedback on the cleaning service <br>
+ * Link: https://tinyurl.com/y5geyal2
+ */
+
+@Entity
+@Table(name = "feedbacks")
 public class Feedback {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     private int grade;
     private String message;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "request_id", referencedColumnName = "id")
     private Request request;
 
     public Feedback() {
