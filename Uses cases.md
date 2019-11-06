@@ -1,7 +1,7 @@
 # Use Case Diagram 
 <img src="https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/Iteration-2/Requirements/Use%20Case%20Diagram.png?raw=true" width="70%" />
 
-**Terminology**
+### [Terminology](#terms)
 
 | **Term** | **Definition** |
 | --- | --- |
@@ -62,18 +62,18 @@
 | --- | --- |
 | Actors | Client |
 | Pre-conditions | Client fills the feedback form for a &quot;Done&quot; request |
-| Flow of events | <ol> <li>Client chooses grade the service</li> <li>Client submit the feedback comment</li> <li>System stores the grade and the feedback comment for the request</li> </ol> |
+| Flow of events | <ol> <li>Include Admin Panel Request List Use Case</li> <li>Client chooses grade the service</li> <li>Client submit the feedback comment</li> <li>System stores the grade and the feedback comment for the request</li> </ol> |
 | Post-conditions | Cleaning service feedback is saved for the request |
 
 <img src="https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/Iteration-2/Requirements/Activity%20diagrams/AD_feedback.png?raw=true" width="50%" />
 
-### [Admin Panel Request List](#admin-panel-request-list)
-| **Use Case Name** | **Admin Panel Request List** |
+### [Request List](#request-list)
+| **Use Case Name** | **Request List** |
 | --- | --- |
-| Actors | Admin |
-| Pre-conditions | Admin is authenticated |
-| Flow of events | <ol><li>Admin opens the request list</li><li>The system shows a list with all requests</li></ol> |
-| Post-conditions | The system displayed all requests in the admin panel |
+| Actors | Admin, Client |
+| Pre-conditions | Admin/Client is authenticated |
+| Flow of events | <ol><li>Admin/Client opens the request list</li><li>The system shows a list with all requests</li></ol> |
+| Post-conditions | The system displayed all client's requests OR all requests for admin|
 
 <img src="https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/Iteration-2/Requirements/Activity%20diagrams/AD_list_request.png?raw=true" width="50%" />
 

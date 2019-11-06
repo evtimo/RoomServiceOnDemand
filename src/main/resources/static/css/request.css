@@ -1,0 +1,74 @@
+.toast-modal {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    z-index: 10;
+}
+
+.toast-modal:not(:last-child) {
+    margin-bottom: 0;
+}
+
+@media (max-width: 576px) {
+    .toast-modal {
+        left: 0;
+        width: 100%;
+    }
+}
+
+.feedback-rate {
+    font-size: 30px;
+}
+
+.feedback-rate>input {
+    display: none;
+}
+
+.feedback-rate>label {
+    color: #C4C4C4;
+    display: inline-block;
+    padding-right: 3px;
+}
+
+.feedback-rate>input:checked~label {
+    color: #ffca08;
+}
+
+.feedback-rate>input:hover~label {
+    color: #ffca08;
+}
+
+.breadcrumb {
+    background: transparent;
+}
+
+.breadcrumb-item {
+    cursor: pointer;
+}
+
+.breadcrumb-item.active {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.badge-NEW {
+    color: #fff;
+    background-color: #28a745;
+}
+
+.badge-PROGRESS {
+    color: #212529;
+    background-color: #ffc107;
+}
+
+.badge-CANCELED {
+    color: #fff;
+    background-color: #dc3545;
+}
+
+.badge-DONE {
+    color: #fff;
+    background-color: #6c757d;
+}

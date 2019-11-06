@@ -4,6 +4,11 @@ package university.project.roomserviceondemand.models;
  *  Date: 06.10.2019
  */
 
+/**
+ * Enum represents request's status <br>
+ * Source: Terminology <br>
+ * Link: https://tinyurl.com/y4yytq62
+ */
 public enum Status {
 
 
