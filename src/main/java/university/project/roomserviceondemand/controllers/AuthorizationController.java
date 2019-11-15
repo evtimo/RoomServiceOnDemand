@@ -6,10 +6,12 @@ package university.project.roomserviceondemand.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,6 +25,8 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Class handles authorization operations <br>
@@ -34,6 +38,9 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 public class AuthorizationController {
+
+    @Value("${error.message}")
+    private String errorMessage;
 
     private final UserService userService;
     private final UserDetailsService userDetailsService;
@@ -73,15 +80,41 @@ public class AuthorizationController {
      * @return http response
      */
     @PostMapping("/signUpPost")
-    public String signUp(User user) {
+    public String signUp(Model model, User user) {
         User byEmail = userService.findByEmail(user.getEmail());
+
         if (byEmail == null) {
+            System.out.println(user.getPassword());
+            if(user.getPassword().length() < 8) {
+                String error = "Password length should be at least 8 symbols!";
+                model.addAttribute("errorMessage", error);
+                return "views/signup";
+            }
+            if(!user.getPassword().matches(".*\\d+.*")) {
+                String error = "Password should contain at least one digit!";
+                model.addAttribute("errorMessage", error);
+                return "views/signup";
+            }
+            if(!user.getEmail().matches("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$")) {
+                String error = "Email should be in correct format!";
+                model.addAttribute("errorMessage", error);
+                return "views/signup";
+            }
+            String regex = "^\\+(?:[0-9] ?){6,14}[0-9]$";
+            Pattern pattern = Pattern.compile(regex);
+            Matcher matcher = pattern.matcher(user.getPhoneNumber());
+            if(!matcher.matches()) {
+                String error = "Phone number should be in correct format!";
+                model.addAttribute("errorMessage", error);
+                return "views/signup";
+            }
             userService.addUser(user);
             System.out.println(user.getEmail());
             return "redirect:/login";
         } else {
             return "redirect:/signUp";
         }
+
     }
 
     @PostMapping("/postLogin")
