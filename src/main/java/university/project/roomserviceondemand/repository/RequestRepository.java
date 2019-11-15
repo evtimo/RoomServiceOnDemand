@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface RequestRepository extends JpaRepository<Request, Long> {
     List<Request> getAllByUserId(Long userId);
+    void deleteAll();
 }
