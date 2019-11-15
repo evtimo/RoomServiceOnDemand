@@ -1,31 +1,42 @@
 # RoomServiceOnDemand
 
+### Pre-request
+1. Install Git
+2. Install PostgreSQL (<a href="http://postgresguide.com/setup/install.html"> instructions </a>)
+3. Install Java 8
+4. Install Maven
+5. Install IntelliJ IDEA
+6. Create database (instruction below)
+
+### Database creation
+Database properties are stored in /src/main/resources/application.properties file 
+More detailed instructions hot to create database in PostgreSQL your can find here: Windows / <a href="https://www.digitalocean.com/community/tutorials/postgresql-ubuntu-16-04-ru"> Linux </a>
+
+Create database by command in terminal `sudo -u postgres createdb innoroomservice`
+
+If you don't know the password of your *postgres* user, do the following:
+1. Open `psql` tool in your terminal from default postgres user 
+2. Execute command `\password postgres`
+3. Type password "admin"
+
+
 ## Building the project  
 
-### Manual building (default props)
-1. In terminal, execute: mvnw clean package (Build and package jar file)  
-   The resulting jar: target/roomserviceondemand-0.0.1-SNAPSHOT.jar
-1. Run the project: java -jar target/roomserviceondemand-0.0.1-SNAPSHOT.jar
+### IntelliJ IDEA building
+1. Clone repo `git clone https://github.com/SeregaKuznetsov/RoomServiceOnDemand.git`
+2. Open IntelliJ IDEA
+3. Choose Import project from existing sources
+4. Choose Import project from external mode - Maven or just choose pom.xml file
+5. Confirm all the next stages
+6. After all dependencies are imported, open Run -> Edit configuration
+7. Add Spring Boot configuration
+8. Choose available Main class from list
+9. If your password for *postgres* user is not "admin", change it in file  `/src/main/resources/application.properties` in field `spring.datasource.password`
+10. Run the created configuration
 
-### IntelliJ IDEA
-1. Clone repo
-1. Open IntelliJ IDEA
-1. Choose import project from existing sources
-1. Choose maven build system
-1. Choose pom.xml file
-1. After dependencies import, open run->edit configuration
-1. Add Spring Boot configuration
-1. Run the created configuration
-
-### Database
-Project uses PostgreSQL DBMS  
-You can find database properties in application.properties file 
-
-### Application properties
-
-spring.datasource.url // database connection url  
-spring.datasource.username // database user  
-spring.datasource.password // database user paasword  
 
 ### Application
-Open URL in browser: localhost:8080/ (default)
+
+- To use application open URL in browser: localhost:8080
+- To use ordinary user features you need create new accaount by Sign Up and then Sing In
+- To use admin panel features you need to create new user account by Sign Up and than manually change the `role` atribute in `users` table of database for created user to `ADMIN`
