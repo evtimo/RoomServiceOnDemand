@@ -6,11 +6,13 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.rules.SpringClassRule;
 import org.springframework.test.context.junit4.rules.SpringMethodRule;
+import org.springframework.ui.Model;
 import university.project.roomserviceondemand.application.RoomserviceondemandApplication;
 import university.project.roomserviceondemand.controllers.AuthorizationController;
 import university.project.roomserviceondemand.models.User;
@@ -29,6 +31,9 @@ import static org.junit.Assert.assertNull;
 @ContextConfiguration(classes = {RoomserviceondemandApplication.class})
 @RunWith(Parameterized.class)
 public class SignUpPasswordLengthTest {
+
+	@Mock
+	private Model model;
 
 	@ClassRule
 	public static final SpringClassRule SPRING_CLASS_RULE = new SpringClassRule();
@@ -83,7 +88,7 @@ public class SignUpPasswordLengthTest {
 		user.setName(name);
 		user.setEmail(email);
 		user.setPhoneNumber(phone);
-		authorizationController.signUp(user);
+		authorizationController.signUp(model, user);
 		assertNull("New user was not created", userService.findByEmail(user.getEmail()));
 	}
 

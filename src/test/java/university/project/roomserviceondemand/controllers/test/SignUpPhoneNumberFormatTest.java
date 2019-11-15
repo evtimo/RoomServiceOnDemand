@@ -6,11 +6,13 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.rules.SpringClassRule;
 import org.springframework.test.context.junit4.rules.SpringMethodRule;
+import org.springframework.ui.Model;
 import university.project.roomserviceondemand.application.RoomserviceondemandApplication;
 import university.project.roomserviceondemand.controllers.AuthorizationController;
 import university.project.roomserviceondemand.models.User;
@@ -29,6 +31,9 @@ import static org.junit.Assert.assertNull;
 @ContextConfiguration(classes = {RoomserviceondemandApplication.class})
 @RunWith(Parameterized.class)
 public class SignUpPhoneNumberFormatTest {
+
+	@Mock
+	private Model model;
 
 	@ClassRule
 	public static final SpringClassRule SPRING_CLASS_RULE = new SpringClassRule();
@@ -63,9 +68,9 @@ public class SignUpPhoneNumberFormatTest {
 	@Parameterized.Parameters(name = "{index}: Test with pass={0}, name={1}, email={2}, phone={3} ")
 	public static Collection<Object[]> data() {
 		Object[][] data = new Object[][]{
-				{"password", "name1", "email1@mail.ru", "1112233"},
-				{"password", "name2", "email2@mail.ru", "+7-8999-1233"},
-				{"password", "name3", "email3@mail.ru", "899913"}};
+				{"password1", "name1", "1email1@mail.ru", "1112233"},
+				{"password1", "name2", "1email2@mail.ru", "+7-8999-1233"},
+				{"password1", "name3", "1email3@mail.ru", "899913"}};
 		return Arrays.asList(data);
 	}
 
@@ -83,7 +88,7 @@ public class SignUpPhoneNumberFormatTest {
 		user.setName(name);
 		user.setEmail(email);
 		user.setPhoneNumber(phone);
-		authorizationController.signUp(user);
+		authorizationController.signUp(model, user);
 		assertNull("New user was not created", userService.findByEmail(user.getEmail()));
 	}
 

@@ -4,7 +4,9 @@ package university.project.roomserviceondemand.controllers;
  *  Date: 09.10.2019
  */
 
+import org.aspectj.asm.IModelFilter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +17,9 @@ import university.project.roomserviceondemand.services.UserService;
 import university.project.roomserviceondemand.utils.MailSender;
 
 import javax.servlet.http.HttpSession;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 /**
@@ -33,6 +37,10 @@ public class RequestController {
     private final UserService userService;
     private final FeedbackService feedbackService;
     private final GMailSender gMailSender;
+
+    @Value("${error.message}")
+    private String errorMessage;
+
 
     User user;
     Request request;
@@ -75,24 +83,62 @@ public class RequestController {
      * @return http-response
      */
     @PostMapping
-    public String create(HttpSession session, @RequestParam("room") int room, @RequestParam("datetime") Date datetime){
+    public String create(Model model, HttpSession session, @RequestParam("room") int room, @RequestParam("datetime") Date datetime){
 
-        User user = (User) session.getAttribute("user");
+//        String error = "First Name & Last Name is required!";
+//        model.addAttribute("errorMessage", error);
+//        return "addPerson";
 
-        Request request = new Request();
-        request.setRoom(room);
-        request.setDate(datetime);
-        request.setStatus(Status.NEW);
-        request.setUser(user);
+        Calendar calendar = new GregorianCalendar();
+        calendar.setTime(datetime);
 
-        requestService.save(request);
+        if (calendar.get(Calendar.HOUR_OF_DAY) < 10 || calendar.get(Calendar.HOUR_OF_DAY) > 18) {
+            User user = (User) session.getAttribute("user");
 
-        String message = "You have a new cleaning request from " + user.getName() + " in the room " + room;
-        gMailSender.send("roomserviceondemand@gmail.com", "roomserviceondemand@gmail.com", message, "New Cleaning Request: [Room: " + room +"]");
+            List<Request> requestList;
+            if (user.getRole() == Role.ADMIN) {
+                requestList = requestService.findAll();
+            } else {
+                requestList = requestService.getAllByUserId(user.getId());
+            }
 
+            model.addAttribute("currentUser", user);
+            model.addAttribute("requestList", requestList);
 
-        return "redirect:/requests";
+            return "views/requestsError";
+        }
+        else {
+            User user = (User) session.getAttribute("user");
+
+            Request request = new Request();
+            request.setRoom(room);
+            request.setDate(datetime);
+            request.setStatus(Status.NEW);
+            request.setUser(user);
+
+            requestService.save(request);
+
+            String message = "You have a new cleaning request from " + user.getName() + " in the room " + room;
+            gMailSender.send("roomserviceondemand@gmail.com", "roomserviceondemand@gmail.com", message, "New Cleaning Request: [Room: " + room +"]");
+
+            List<Request> requestList;
+            if (user.getRole() == Role.ADMIN) {
+                requestList = requestService.findAll();
+            } else {
+                requestList = requestService.getAllByUserId(user.getId());
+            }
+
+            model.addAttribute("currentUser", user);
+            model.addAttribute("requestList", requestList);
+
+            return "redirect:/requests";
+        }
     }
+
+//    @PostMapping("/requestError")
+//    public String requestError(Feedback feedback){
+//        return "views/requestsError";
+//    }
 
     /**
      * Handles http-put method for existing request update <br>
