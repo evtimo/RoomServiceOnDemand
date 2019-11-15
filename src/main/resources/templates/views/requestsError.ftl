@@ -1,10 +1,10 @@
 <#import "../components/_layout.ftl" as layout>
 <#-- @ftlvariable name="_csrf" type="org.springframework.security.web.csrf.CsrfToken" -->
 <#-- @ftlvariable name="error" type="java.util.Optional<String>" -->
+<#import "/spring.ftl" as spring>
 
 <#assign page_name='requests'>
 <#assign page_title='Requests'>
-<#import "/spring.ftl" as spring>
 
 <@layout.layout page_title page_name; section>
     <#if section = "scripts">
@@ -18,20 +18,11 @@
         <link rel="stylesheet" href="/css/request.css" />
     </#if>
 
-
-
     <#if section="content">
         <div class="container">
 
-            <#if errorMessage??>
-                <div style="color:red;font-style:italic;">
-                    ${errorMessage}
-                </div>
-            </#if>
-
-            <h1 class="mt-5"><@spring.message "lbl.requests.title"></@spring.message></h1>
+            <h1 class="mt-5"><@spring.message "lbl.error.alert"></@spring.message></h1>
             <button type="button" class="mt-2 mb-2 btn btn-primary btn-md modal-trigger" data-modal-type="create-request"><@spring.message "lbl.requests.create"></@spring.message></button>
-<#--            <button class="btn btn-lg btn-primary btn-block" type="submit"><@spring.message "title.login"></@spring.message></button>-->
 
             <ol class="breadcrumb mb-0">
                 <li class="breadcrumb-item active" aria-current="page" data-request-type="ALL"><@spring.message "lbl.requests.all"></@spring.message></li>
@@ -52,9 +43,9 @@
                                 <p class="card-text">${request.date}</p>
                                 <span class="badge badge-secondary badge-${request.status} mb-2">${request.status.description}</span>
                                 <#if currentUser.role=="CLIENT" && request.status=="DONE">
-                                    <button type="button" class="btn btn-primary btn-sm float-right modal-trigger" data-modal-type="feedback" data-room="${request.room}" data-id="${request.id}"><@spring.message "lbl.requests.feedback"></@spring.message></button>
+                                    <button type="button" class="btn btn-primary btn-sm float-right modal-trigger" data-modal-type="feedback" data-room="${request.room}" data-id="${request.id}">Feedback</button>
                                 <#elseif currentUser.role=="ADMIN" && request.status!="DONE">
-                                    <button type="button" class="btn btn-primary btn-sm float-right modal-trigger" data-modal-type="request-change" data-status="${request.status}" data-room="${request.room}" data-id="${request.id}"><@spring.message "lbl.requests.edit"></@spring.message></button>
+                                    <button type="button" class="btn btn-primary btn-sm float-right modal-trigger" data-modal-type="request-change" data-status="${request.status}" data-room="${request.room}" data-id="${request.id}">Edit</button>
                                 </#if>
                             </div>
                         </div>
@@ -63,13 +54,13 @@
             </div>
         </div>
     </#if>
-<!-- TODO: MAKE THIS INCLUDE ONLY FOR CLIENT -->
-<#if currentUser.role == "CLIENT">
-<#include "../views/feedback.ftl">
-<#include "../views/create-request-modal.ftl">
-</#if>
-<!-- TODO: MAKE THIS INCLUDE ONLY FOR ADMIN -->
-<#if currentUser.role == "ADMIN">
-<#include "../views/request-status-change.ftl">
-</#if>
+    <!-- TODO: MAKE THIS INCLUDE ONLY FOR CLIENT -->
+    <#if currentUser.role == "CLIENT">
+        <#include "../views/feedback.ftl">
+        <#include "../views/create-request-modal.ftl">
+    </#if>
+    <!-- TODO: MAKE THIS INCLUDE ONLY FOR ADMIN -->
+    <#if currentUser.role == "ADMIN">
+        <#include "../views/request-status-change.ftl">
+    </#if>
 </@layout.layout>
