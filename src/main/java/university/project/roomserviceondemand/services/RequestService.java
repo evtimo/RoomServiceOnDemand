@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import university.project.roomserviceondemand.models.Request;
 import university.project.roomserviceondemand.repository.RequestRepository;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -28,6 +29,11 @@ public class RequestService {
 
     public Request getByRequestId(Long requestId) { return  requestRepository.findById(requestId).orElse(new Request()); }
 
+    @Transactional
     public void save(Request request) { requestRepository.save(request); }
+
+    public void deleteAllReqs() {
+        requestRepository.deleteAll();
+    }
 
 }
