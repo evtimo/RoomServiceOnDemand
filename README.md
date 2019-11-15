@@ -4,13 +4,13 @@
 1. Install Git
 2. Install PostgreSQL (<a href="http://postgresguide.com/setup/install.html"> instructions </a>)
 3. Install Java 8
-4. Install Maven
+4. Install Maven (<a href="https://maven.apache.org/install.html"> instructions </a>)
 5. Install IntelliJ IDEA
 6. Create database (instruction below)
 
 ### Database creation
-Database properties are stored in /src/main/resources/application.properties file 
-More detailed instructions hot to create database in PostgreSQL your can find here: Windows / <a href="https://www.digitalocean.com/community/tutorials/postgresql-ubuntu-16-04-ru"> Linux </a>
+Database properties are stored in `/src/main/resources/application.properties` file </br>
+More detailed instructions hot to create database in PostgreSQL your can find here: <a href="https://www.microfocus.com/documentation/idol/IDOL_12_0/MediaServer/Guides/html/English/Content/Getting_Started/Configure/_TRN_Set_up_PostgreSQL.htm"> Windows </a> / <a href="https://www.digitalocean.com/community/tutorials/postgresql-ubuntu-16-04-ru"> Linux </a>
 
 Create database by command in terminal `sudo -u postgres createdb innoroomservice`
 
@@ -35,7 +35,7 @@ If you don't know the password of your *postgres* user, do the following:
 10. Run the created configuration
 
 
-### Application
+## Run Application
 
 - To use application open URL in browser: localhost:8080
 - To use ordinary user features you need create new accaount by Sign Up and then Sing In
