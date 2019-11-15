@@ -38,5 +38,5 @@ If you don't know the password of your *postgres* user, do the following:
 ## Run Application
 
 - To use application open URL in browser: localhost:8080
-- To use ordinary user features you need create new accaount by Sign Up and then Sing In
+- To use ordinary user features you need create new account by Sign Up and then Sing In
 - To use admin panel features you need to create new user account by Sign Up and than manually change the `role` atribute in `users` table of database for created user to `ADMIN`
