@@ -1,4 +1,5 @@
 <#-- @ftlvariable name="_csrf" type="org.springframework.security.web.csrf.CsrfToken" -->
+<#import "/spring.ftl" as spring>
 
 <div id="feedback" class="toast toast-modal hide" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-header">

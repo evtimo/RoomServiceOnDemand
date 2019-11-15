@@ -6,6 +6,7 @@ import university.project.roomserviceondemand.models.Request;
 import university.project.roomserviceondemand.repository.FeedbackRepository;
 import university.project.roomserviceondemand.repository.RequestRepository;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -16,6 +17,7 @@ public class FeedbackService {
         this.feedbackRepository = feedbackRepository;
     }
 
+    @Transactional
     public void save(Feedback feedback) { feedbackRepository.save(feedback); }
 
 }
