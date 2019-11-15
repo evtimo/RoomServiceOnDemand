@@ -1,5 +1,14 @@
 # RoomServiceOnDemand
 
+Application is delpoyed and available online:
+
+https://whispering-scrubland-01815.herokuapp.com/login
+
+Admin account:
+
+log: admin@mail.ru \
+pas: password1
+
 ### Pre-request
 1. Install Git
 2. Install PostgreSQL (<a href="http://postgresguide.com/setup/install.html"> instructions </a>)
