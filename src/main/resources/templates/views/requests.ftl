@@ -4,6 +4,7 @@
 
 <#assign page_name='requests'>
 <#assign page_title='Requests'>
+<#import "/spring.ftl" as spring>
 
 <@layout.layout page_title page_name; section>
     <#if section = "scripts">
@@ -28,8 +29,6 @@
                 </div>
             </#if>
 
-
-
             <#if currentUser.role == "CLIENT">
                 <h1 class="mt-5">My cleaning requests</h1>
                 <button type="button" class="mt-2 mb-2 btn btn-primary btn-md modal-trigger" data-modal-type="create-request">Create new</button>
@@ -40,13 +39,12 @@
             <#--                <button type="button" class="mt-2 mb-2 btn btn-primary btn-md modal-trigger" data-modal-type="create-request">Create new</button>-->
             </#if>
 
-
             <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item active" aria-current="page" data-request-type="ALL">All</li>
-                <li class="breadcrumb-item" aria-current="page" data-request-type="NEW" >New</li>
-                <li class="breadcrumb-item" aria-current="page" data-request-type="PROGRESS" >In progress</li>
-                <li class="breadcrumb-item" aria-current="page" data-request-type="CANCELED" >Canceled</li>
-                <li class="breadcrumb-item" aria-current="page" data-request-type="DONE" >Done</li>
+                <li class="breadcrumb-item active" aria-current="page" data-request-type="ALL"><@spring.message "lbl.requests.all"></@spring.message></li>
+                <li class="breadcrumb-item" aria-current="page" data-request-type="NEW" ><@spring.message "lbl.requests.new"></@spring.message></li>
+                <li class="breadcrumb-item" aria-current="page" data-request-type="PROGRESS" ><@spring.message "lbl.requests.progress"></@spring.message></li>
+                <li class="breadcrumb-item" aria-current="page" data-request-type="CANCELED" ><@spring.message "lbl.requests.cancel"></@spring.message></li>
+                <li class="breadcrumb-item" aria-current="page" data-request-type="DONE" ><@spring.message "lbl.requests.done"></@spring.message></li>
             </ol>
 
             <hr class="mt-2 mb-5">
@@ -60,9 +58,9 @@
                                 <p class="card-text">${request.date}</p>
                                 <span class="badge badge-secondary badge-${request.status} mb-2">${request.status.description}</span>
                                 <#if currentUser.role=="CLIENT" && request.status=="DONE">
-                                    <button type="button" class="btn btn-primary btn-sm float-right modal-trigger" data-modal-type="feedback" data-room="${request.room}" data-id="${request.id}">Feedback</button>
+                                    <button type="button" class="btn btn-primary btn-sm float-right modal-trigger" data-modal-type="feedback" data-room="${request.room}" data-id="${request.id}"><@spring.message "lbl.requests.feedback"></@spring.message></button>
                                 <#elseif currentUser.role=="ADMIN" && request.status!="DONE">
-                                    <button type="button" class="btn btn-primary btn-sm float-right modal-trigger" data-modal-type="request-change" data-status="${request.status}" data-room="${request.room}" data-id="${request.id}">Edit</button>
+                                    <button type="button" class="btn btn-primary btn-sm float-right modal-trigger" data-modal-type="request-change" data-status="${request.status}" data-room="${request.room}" data-id="${request.id}"><@spring.message "lbl.requests.edit"></@spring.message></button>
                                 </#if>
                             </div>
                         </div>
@@ -71,13 +69,13 @@
             </div>
         </div>
     </#if>
-    <!-- TODO: MAKE THIS INCLUDE ONLY FOR CLIENT -->
-    <#if currentUser.role == "CLIENT">
-        <#include "../views/feedback.ftl">
-        <#include "../views/create-request-modal.ftl">
-    </#if>
-    <!-- TODO: MAKE THIS INCLUDE ONLY FOR ADMIN -->
-    <#if currentUser.role == "ADMIN">
-        <#include "../views/request-status-change.ftl">
-    </#if>
+<!-- TODO: MAKE THIS INCLUDE ONLY FOR CLIENT -->
+<#if currentUser.role == "CLIENT">
+<#include "../views/feedback.ftl">
+<#include "../views/create-request-modal.ftl">
+</#if>
+<!-- TODO: MAKE THIS INCLUDE ONLY FOR ADMIN -->
+<#if currentUser.role == "ADMIN">
+<#include "../views/request-status-change.ftl">
+</#if>
 </@layout.layout>
