@@ -14,13 +14,13 @@
         <form action="/request" method="POST">
             <div class="form-group">
                 <label for="room"><@spring.message "lbl.create.room"></@spring.message></label>
-                <input type="number" name="room" class="form-control" id="room" placeholder="<@spring.message "lbl.create.room"></@spring.message>">
+                <input type="number" name="room" class="form-control" id="room" placeholder="<@spring.message "lbl.create.room"></@spring.message>" required autofocus>
             </div>
 
             <div class="form-group">
                 <label><@spring.message "lbl.create.date"></@spring.message></label>
                 <div class="input-group date" id="datepicker" data-target-input="nearest">
-                    <input type="text" name="datetime" class="form-control datetimepicker-input" data-target="#datepicker"/>
+                    <input type="text" name="datetime" class="form-control datetimepicker-input" data-target="#datepicker" required>
                     <div class="input-group-append" data-target="#datepicker" data-toggle="datetimepicker">
                         <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                     </div>

@@ -30,12 +30,12 @@
             </#if>
 
             <#if currentUser.role == "CLIENT">
-                <h1 class="mt-5">My cleaning requests</h1>
-                <button type="button" class="mt-2 mb-2 btn btn-primary btn-md modal-trigger" data-modal-type="create-request">Create new</button>
+                <h1 class="mt-5"><@spring.message "lbl.create.my"></@spring.message></h1>
+                <button type="button" class="mt-2 mb-2 btn btn-primary btn-md modal-trigger" data-modal-type="create-request"><@spring.message "lbl.requests.create"></@spring.message></button>
             </#if>
 
             <#if currentUser.role == "ADMIN">
-                <h1 class="mt-5">Cleaning requests</h1>
+                <h1 class="mt-5"><@spring.message "lbl.create.requests"></@spring.message></h1>
             <#--                <button type="button" class="mt-2 mb-2 btn btn-primary btn-md modal-trigger" data-modal-type="create-request">Create new</button>-->
             </#if>
 
