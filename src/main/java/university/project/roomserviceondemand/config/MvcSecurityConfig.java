@@ -46,7 +46,7 @@ public class MvcSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                    .antMatchers( "/signUp", "/signUpPost", "/css/**", "/js/**","/img/**").permitAll()
+                    .antMatchers( "/signUp", "/login", "/signUpPost", "/css/**", "/js/**","/img/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                     .formLogin()

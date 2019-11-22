@@ -41,7 +41,6 @@ public class RequestController {
     @Value("${error.message}")
     private String errorMessage;
 
-
     User user;
     Request request;
     Feedback feedback;
