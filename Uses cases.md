@@ -81,7 +81,7 @@
 | **Use Case Name** | **Change of Language** |
 | --- | --- |
 | Actors | Client, Admin |
-| Flow of events | <ol><li> S1. The user selects a language (Russian or English)</li><li> S2. The system displays the user interface in the selected language</li></ol>|
+| Flow of events | <ol><li> A1. The user selects a language (Russian or English)</li><li> S2. The system displays the user interface in the selected language</li></ol>|
 | Post-conditions | System text is shown in the selected language |
 
 <img src="https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/Iteration-2/Requirements/Activity%20diagrams/AD_language.png?raw=true" width="50%" />
