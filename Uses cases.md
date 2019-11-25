@@ -19,7 +19,7 @@
 | **Use Case Name** | **Sign-Up** |
 | --- | --- |
 | Actors | Client |
-| Flow of events | <ol><li> A1. User fills the sign-up form: email, password (>8 symbols, at least one digit), full name, phone number (in international format)</li><li> S1. The system validates the input fields for completeness and correctness of the format </li><li> S2. The system checks that there is no account registered with the provided login </li> <li> S3. The system creates an account with the provided client information (name, email, password)</li></ol> |
+| Flow of events | <ol><li> A1. User fills the sign-up form: email, password (>8 symbols, at least one digit), full name, phone number (in international format)</li><li> S2. The system validates the input fields for completeness and correctness of the format </li><li> S3. The system checks that there is no account registered with the provided login </li> <li> S4. The system creates an account with the provided client information (name, email, password)</li></ol> |
 | Post-conditions | User is registered and can Sign In with the provided credentials |
 | Alternate flows and exceptions | <ol><li> AE1. At least one of the fields in the form is incorrect, the user gets a message of what was incorrect and fills the form again</li><li> AE2. The system finds an account with the provided login, the system shows a message that a user with the provided login is already registered, the user is not registered</li> </ol> |
 
