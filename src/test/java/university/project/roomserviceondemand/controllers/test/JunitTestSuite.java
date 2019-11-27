@@ -12,7 +12,10 @@ import org.junit.runners.Suite;
         SignUpNewAccountCreationTest.class,
         SignUpPasswordContainsDigitTest.class,
         SignUpPasswordLengthTest.class,
-        SignUpPhoneNumberFormatTest.class
+        SignUpPhoneNumberFormatTest.class,
+		SignInCorrectTest.class,
+		SignInFieldIncorrectTest.class,
+		SignInUserDoesntExistTest.class
 })
 
 public class JunitTestSuite {

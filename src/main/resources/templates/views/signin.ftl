@@ -24,6 +24,13 @@
             <label for="inputPassword" class="sr-only">Password</label>
             <input type="password" id="inputPassword" name="password" class="form-control" placeholder="<@spring.message "lbl.login.password"></@spring.message>" required>
             <input type="hidden" name="_csrf" value="${_csrf.token}">
+
+            <#if errorMessage??>
+                <div style="color:red;font-style:italic;">
+                    ${errorMessage}
+                </div>
+            </#if>
+
             <button class="btn btn-lg btn-primary btn-block" type="submit"><@spring.message "title.login"></@spring.message></button>
         </form>
     </#if>

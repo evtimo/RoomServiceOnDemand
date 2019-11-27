@@ -69,7 +69,16 @@ public class AuthorizationController {
      */
     @PostMapping("/signInPost")
     public String signIn(User user) {
-        return "";
+        if(user.getPassword() == "" || user.getEmail() == "") {
+            return "At least one of the fields in the form is incorrect!";
+        } else {
+            if(userService.findByEmail(user.getEmail()) == null) {
+                return "Account for the provided email was not found!";
+            }
+            else {
+                return "Successfully logged in!";
+            }
+        }
     }
 
     /**
@@ -104,7 +113,7 @@ public class AuthorizationController {
             Pattern pattern = Pattern.compile(regex);
             Matcher matcher = pattern.matcher(user.getPhoneNumber());
             if(!matcher.matches()) {
-                String error = "Phone number should be in correct format!";
+                String error = "Phone number should be in correct international format, starting with '+' !";
                 model.addAttribute("errorMessage", error);
                 return "views/signup";
             }
@@ -143,5 +152,12 @@ public class AuthorizationController {
             cookie.setMaxAge(0);
         }
         return "redirect:/login";
+    }
+
+    @PostMapping("/signInPostFailure")
+    public String signInWithFailure(Model model, HttpSession session) {
+        String error = "User not found!";
+        model.addAttribute("errorMessage", error);
+        return "views/signin";
     }
 }

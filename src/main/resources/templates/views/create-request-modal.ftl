@@ -14,7 +14,7 @@
         <form action="/request" method="POST">
             <div class="form-group">
                 <label for="room"><@spring.message "lbl.create.room"></@spring.message></label>
-                <input type="number" name="room" class="form-control" id="room" placeholder="<@spring.message "lbl.create.room"></@spring.message>" required autofocus>
+                <input type="number" pattern="[0-9]{10}" name="room" class="form-control" id="room" placeholder="<@spring.message "lbl.create.room"></@spring.message>" required autofocus>
             </div>
 
             <div class="form-group">
