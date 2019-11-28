@@ -3,7 +3,7 @@
 | **Test Case name:** | Sign Up 1 |
 | --- | --- |
 | **Test ID:** | TC-01 |
-| **Test suite:** | Sign Up |
+| **Test suite:** |<a href = "https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/master/docs/Uses%20Cases.md#sign-up">Sign Up</a> |
 | **Priority:** |   |
 | **Setup:** | The user database is empty |
 | **Teardown:** | Clean up the user database |
@@ -21,7 +21,7 @@
 | **Test Case name:** | Sign Up 2 |
 | --- | --- |
 | **Test ID:** | TC-02 |
-| **Test suite:** | Sign Up |
+| **Test suite:** | <a href = "https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/master/docs/Uses%20Cases.md#sign-up">Sign Up</a> |
 | **Priority:** |   |
 | **Setup:** | The user database is empty |
 | **Teardown:** | Clean up the user database |
@@ -38,7 +38,7 @@
 | **Test Case name:** | Sign Up 3 |
 | --- | --- |
 | **Test ID:** | TC-03 |
-| **Test suite:** | Sign Up |
+| **Test suite:** | <a href = "https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/master/docs/Uses%20Cases.md#sign-up">Sign Up</a> |
 | **Priority:** |   |
 | **Setup:** | In the database there is a user with same credentinals |
 | **Teardown:** | Clean up the user database |
@@ -56,7 +56,7 @@
 | **Test Case name:** | Sign in 1 |
 | --- | --- |
 | **Test ID:** | TC-04 |
-| **Test suite:** | Sign in |
+| **Test suite:** | <a href = "https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/master/docs/Uses%20Cases.md#sign-in">Sign in</a> |
 | **Priority:** |   |
 | **Setup:** | A user account is created in the database |
 | **Teardown:** | User is Signed In |
@@ -72,7 +72,7 @@
 | **Test Case name:** | Sign in 2 |
 | --- | --- |
 | **Test ID:** | TC-05 |
-| **Test suite:** | Sign in |
+| **Test suite:** | <a href = "https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/master/docs/Uses%20Cases.md#sign-in">Sign in</a> |
 | **Priority:** |   |
 | **Setup:** | A user account is created in the database |
 | **Teardown:** | User is Signed In |
@@ -89,7 +89,7 @@
 | **Test Case name:** | Sign in 3 |
 | --- | --- |
 | **Test ID:** | TC-06 |
-| **Test suite:** | Sign in |
+| **Test suite:** | <a href = "https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/master/docs/Uses%20Cases.md#sign-in">Sign in</a> |
 | **Priority:** |   |
 | **Setup:** | A user account is created in the database |
 | **Teardown:** |   |
@@ -107,7 +107,7 @@
 | **Test Case name:** | Request for Cleaning Creation 1 |
 | --- | --- |
 | **Test ID:** | TC-07 |
-| **Test suite:** | Request for Cleaning Creation |
+| **Test suite:** | <a href = "https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/master/docs/Uses%20Cases.md#request-for-cleaning-creation">Request for Cleaning Creation</a>  |
 | **Priority:** |   |
 | **Setup:** | User is logged in to the system |
 | **Teardown:** | Clean up created requests in the database |
@@ -122,7 +122,7 @@
 | **Test Case name:** | Request for Cleaning Creation 2 |
 | --- | --- |
 | **Test ID:** | TC-08 |
-| **Test suite:** | Request for Cleaning Creation |
+| **Test suite:** | <a href = "https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/master/docs/Uses%20Cases.md#request-for-cleaning-creation">Request for Cleaning Creation</a> |
 | **Priority:** |   |
 | **Setup:** | User is logged in to the system |
 | **Teardown:** |   |
@@ -137,7 +137,7 @@
 | **Test Case name:** | Feedback on the cleaning filling |
 | --- | --- |
 | **Test ID:** | TC-09 |
-| **Test suite:** | Feedback on the cleaning filling |
+| **Test suite:** | <a href = "https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/master/docs/Uses%20Cases.md#feedback-on-the-cleaning-filling">Feedback on the cleaning filling</a> |
 | **Priority:** |   |
 | **Setup:** | The client fills the feedback form for a &quot;Done&quot; request |
 | **Teardown:** | Client feedback entry removed from the database |
@@ -154,7 +154,7 @@
 | **Test Case name:** | Request List |
 | --- | --- |
 | **Test ID:** | TC-10 |
-| **Test suite:** | Request List |
+| **Test suite:** | <a href = "https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/master/docs/Uses%20Cases.md#request-list">Request List</a> |
 | **Priority:** |   |
 | **Setup:** | User is logged in the system |
 | **Teardown:** |   |
@@ -168,7 +168,7 @@
 | **Test Case name:** | Change Language |
 | --- | --- |
 | **Test ID:** | TC-11 |
-| **Test suite:** | Change Language 1 |
+| **Test suite:** | <a href="https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/master/docs/Uses%20Cases.md#change-of-language">Change Language 1</a> |
 | **Priority:** |   |
 | **Setup:** |   |
 | **Teardown:** |   |
@@ -182,7 +182,7 @@
 | **Test Case name:** | Request Status Change |
 | --- | --- |
 | **Test ID:** | TC-12 |
-| **Test suite:** | Request Status Change |
+| **Test suite:** | <a href = "https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/master/docs/Uses%20Cases.md#request-status-change">Request Status Change</a> |
 | **Priority:** |   |
 | **Setup:** |   |
 | **Teardown:** |   |
