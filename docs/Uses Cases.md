@@ -83,7 +83,7 @@ Tracebility: <a href="https://github.com/SeregaKuznetsov/RoomServiceOnDemand/com
 | **Use Case Name** | **Change of Language** |
 | --- | --- |
 | Actors | Client, Admin |
-| Flow of events | <ol><li> <a href = "https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/ae0d15ae9f691b6d84299ee4e97dc6baf9591221/src/main/resources/templates/components/_header.ftl#L21-L24">A1. The user selects a language (Russian or English)</a></li><li> <a href = "https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/543508a3ef4091b6334c486d5d7bc640841dffb4/src/main/java/university/project/roomserviceondemand/config/MvcConfig.java#L70-L74">S2. The system displays the user interface in the selected language</a></li></olhttps://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/543508a3ef4091b6334c486d5d7bc640841dffb4/src/main/java/university/project/roomserviceondemand/config/MvcConfig.java#L70-L74>|
+| Flow of events | <ol><li> <a href = "https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/ae0d15ae9f691b6d84299ee4e97dc6baf9591221/src/main/resources/templates/components/_header.ftl#L21-L24">A1. The user selects a language (Russian or English)</a></li><li> <a href = "https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/543508a3ef4091b6334c486d5d7bc640841dffb4/src/main/java/university/project/roomserviceondemand/config/MvcConfig.java#L70-L74">S2. The system displays the user interface in the selected language</a></li></ol#L70-L74>|
 | Post-conditions | System text is shown in the selected language |
 
 <img src="https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/Iteration-2/Requirements/Activity%20diagrams/AD_language.png?raw=true" width="50%" />
