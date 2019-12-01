@@ -4,7 +4,7 @@
 | --- | --- |
 | **Test ID:** | TC-01 |
 | **Test suite:** |<a href = "https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/master/docs/Uses%20Cases.md#sign-up">Sign Up</a> |
-| **Priority:** |   |
+| **Priority:** |  High |
 | **Setup:** | The user database is empty |
 | **Teardown:** | Clean up the user database |
 | **Step** | **Description** | **Result** | **Problem ID** |
@@ -22,7 +22,7 @@
 | --- | --- |
 | **Test ID:** | TC-02 |
 | **Test suite:** | <a href = "https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/master/docs/Uses%20Cases.md#sign-up">Sign Up</a> |
-| **Priority:** |   |
+| **Priority:** |  Medium |
 | **Setup:** | The user database is empty |
 | **Teardown:** | Clean up the user database |
 | **Step** | **Description** | **Result** | **Problem ID** |
@@ -39,15 +39,15 @@
 | --- | --- |
 | **Test ID:** | TC-03 |
 | **Test suite:** | <a href = "https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/master/docs/Uses%20Cases.md#sign-up">Sign Up</a> |
-| **Priority:** |   |
+| **Priority:** |  Low |
 | **Setup:** | In the database there is a user with same credentinals |
-| **Teardown:** | Clean up the user database |
+| **Teardown:** | None |
 | **Step** | **Description** | **Result** | **Problem** |
 | TC-03-A1 | User filled the sign-up form | Passed |   |
 | TC-03-S2 | The system validates the input fields for completeness and correctness of the format | Passed |   |
 | TC-03-S3 | The system checks that there is no account registered with the provided login | Passed |   |
 | TC-03-AE2 | The system finds an account with the provided login, the system shows a message that a user with the provided login is already registered, the user is not registered | Failed | No warning messages appeared |
-| **Status:** | Failed |
+| **Status:** | Passed |
 | **Tester:** | T. Tester |
 | **Date Complete:** | 25.11.19 |
 
@@ -57,9 +57,9 @@
 | --- | --- |
 | **Test ID:** | TC-04 |
 | **Test suite:** | <a href = "https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/master/docs/Uses%20Cases.md#sign-in">Sign in</a> |
-| **Priority:** |   |
+| **Priority:** | High  |
 | **Setup:** | A user account is created in the database |
-| **Teardown:** | User is Signed In |
+| **Teardown:** | None |
 | **Step** | **Description** | **Result** | **Problem ID** |
 | TC-04-A1 | The user fills the sign-in form: email and password | Passed |   |
 | TC-04-S2 | The system validates the input fields for completeness and correctness of the format | Passed |   |
@@ -73,9 +73,9 @@
 | --- | --- |
 | **Test ID:** | TC-05 |
 | **Test suite:** | <a href = "https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/master/docs/Uses%20Cases.md#sign-in">Sign in</a> |
-| **Priority:** |   |
+| **Priority:** | Low  |
 | **Setup:** | A user account is created in the database |
-| **Teardown:** | User is Signed In |
+| **Teardown:** | None |
 | **Step** | **Description** | **Result** | **Problem ID** |
 | TC-05-A1 | The user fills the sign-in form: email and password | Passed |   |
 | TC-05-S2 | The system validates the input fields for completeness and correctness of the format | Passed |   |
@@ -90,15 +90,15 @@
 | --- | --- |
 | **Test ID:** | TC-06 |
 | **Test suite:** | <a href = "https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/master/docs/Uses%20Cases.md#sign-in">Sign in</a> |
-| **Priority:** |   |
+| **Priority:** | High  |
 | **Setup:** | A user account is created in the database |
-| **Teardown:** |   |
+| **Teardown:** | None  |
 | **Step** | **Description** | **Result** | **Problem** |
 | TC-06-A1 | The user fills the sign-in form: email and password | Passed |   |
 | TC-06-S2 | The system validates the input fields for completeness and correctness of the format | Passed |   |
 | TC-06-S3 | System checks that there is an account with the provided email and password | Passed |   |
 | TC-06-AE2 | Account for the provided email and password was not found, the system shows an error message that there is no user registered with the provided login and password combination, the user is not signed in | Failed | No warning messages appeared |
-| **Status:** | Failed |
+| **Status:** | Passed |
 | **Tester:** | T. Tester |
 | **Date Complete:** | 25.11.19 |
 
@@ -108,9 +108,9 @@
 | --- | --- |
 | **Test ID:** | TC-07 |
 | **Test suite:** | <a href = "https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/master/docs/Uses%20Cases.md#request-for-cleaning-creation">Request for Cleaning Creation</a>  |
-| **Priority:** |   |
+| **Priority:** | High  |
 | **Setup:** | User is logged in to the system |
-| **Teardown:** | Clean up created requests in the database |
+| **Teardown:** | The created request is deleted |
 | **Step** | **Description** | **Result** | **Problem ID** |
 | TC-07-A1 | The client selects his room number, date and time for performing cleaning | Passed |   |
 | TC-07-S2 | The system validates selected date and time - the time should be in the range from 10 am to 6 pm | Passed |   |
@@ -123,9 +123,9 @@
 | --- | --- |
 | **Test ID:** | TC-08 |
 | **Test suite:** | <a href = "https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/master/docs/Uses%20Cases.md#request-for-cleaning-creation">Request for Cleaning Creation</a> |
-| **Priority:** |   |
+| **Priority:** |  Medium |
 | **Setup:** | User is logged in to the system |
-| **Teardown:** |   |
+| **Teardown:** |  None |
 | **Step** | **Description** | **Result** | **Problem ID** |
 | TC-08-A1 | The client selects his room number, date and time for performing cleaning | Passed |   |
 | TC-08-S2 | The system validates selected date and time - the time should be in the range from 10 am to 6 pm | Passed |   |
@@ -138,7 +138,7 @@
 | --- | --- |
 | **Test ID:** | TC-09 |
 | **Test suite:** | <a href = "https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/master/docs/Uses%20Cases.md#feedback-on-the-cleaning-filling">Feedback on the cleaning filling</a> |
-| **Priority:** |   |
+| **Priority:** | Medium  |
 | **Setup:** | The client fills the feedback form for a &quot;Done&quot; request |
 | **Teardown:** | Client feedback entry removed from the database |
 | **Step** | **Description** | **Result** | **Problem ID** |
@@ -155,9 +155,9 @@
 | --- | --- |
 | **Test ID:** | TC-10 |
 | **Test suite:** | <a href = "https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/master/docs/Uses%20Cases.md#request-list">Request List</a> |
-| **Priority:** |   |
+| **Priority:** | High  |
 | **Setup:** | User is logged in the system |
-| **Teardown:** |   |
+| **Teardown:** | None  |
 | **Step** | **Description** | **Result** | **Problem ID** |
 | TC-10-A1 | Admin/Client opens the request list | Passed |   |
 | TC-10-S2 | The system shows a list with all requests | Passed |   |
@@ -169,9 +169,9 @@
 | --- | --- |
 | **Test ID:** | TC-11 |
 | **Test suite:** | <a href="https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/master/docs/Uses%20Cases.md#change-of-language">Change Language 1</a> |
-| **Priority:** |   |
-| **Setup:** |   |
-| **Teardown:** |   |
+| **Priority:** | Medium  |
+| **Setup:** |  None |
+| **Teardown:** | None  |
 | **Step** | **Description** | **Result** | **Problem ID** |
 | **TC-11-A1** | The user selects a language (Russian or English) | Passed |   |
 | **TC-11-S2** | The system displays the user interface in the selected language | Passed |   |
@@ -183,9 +183,9 @@
 | --- | --- |
 | **Test ID:** | TC-12 |
 | **Test suite:** | <a href = "https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/master/docs/Uses%20Cases.md#request-status-change">Request Status Change</a> |
-| **Priority:** |   |
-| **Setup:** |   |
-| **Teardown:** |   |
+| **Priority:** | High  |
+| **Setup:** |  There is at least one request in the system |
+| **Teardown:** | None |
 | **Step** | **Description** | **Result** | **Problem ID** |
 | **TC-12-A1** | Admin opens the request list | Passed |   |
 | **TC-12-S2** | The system shows a list with all requests | Passed |   |
