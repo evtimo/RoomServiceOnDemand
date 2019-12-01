@@ -103,8 +103,9 @@ public class RequestController {
 
             model.addAttribute("currentUser", user);
             model.addAttribute("requestList", requestList);
-
-            return "views/requestsError";
+            String error = "Time bounds for requests should be between 10:00 and 18:00!";
+            model.addAttribute("errorMessage", error);
+            return "views/requests";
         }
         else {
             User user = (User) session.getAttribute("user");
