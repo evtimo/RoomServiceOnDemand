@@ -121,7 +121,9 @@ public class AuthorizationController {
             System.out.println(user.getEmail());
             return "redirect:/login";
         } else {
-            return "redirect:/signUp";
+            String error = "User with provided login already exists!";
+            model.addAttribute("errorMessage", error);
+            return "views/signup";
         }
 
     }
