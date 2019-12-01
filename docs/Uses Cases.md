@@ -63,7 +63,7 @@ Tracebility: <a href="https://github.com/SeregaKuznetsov/RoomServiceOnDemand/com
 | **Use Case Name** | **Feedback on the cleaning filling** |
 | --- | --- |
 | Actors | Client |
-| Pre-conditions | Client fills the feedback form for a &quot;Done&quot; request |
+| Pre-conditions | Admin changed request status to &quot;Done&quot; |
 | Flow of events | <ol> <li>Include Admin Panel Request List Use Case</li> <li> <a href = "https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/ae0d15ae9f691b6d84299ee4e97dc6baf9591221/src/main/resources/templates/views/feedback.ftl#L20-L47">A3. Client chooses grade the service</a></li> <li> <a href = "https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/ae0d15ae9f691b6d84299ee4e97dc6baf9591221/src/main/resources/templates/views/feedback.ftl#L50-L55"> A4. Client submit the feedback comment </a></li> <li> <a href = "https://github.com/SeregaKuznetsov/RoomServiceOnDemand/blob/ae0d15ae9f691b6d84299ee4e97dc6baf9591221/src/main/java/university/project/roomserviceondemand/controllers/RequestController.java#L169-L174">S5. System stores the grade and the feedback comment for the request</a></li> </ol> |
 | Post-conditions | Cleaning service feedback is saved for the request |
 
