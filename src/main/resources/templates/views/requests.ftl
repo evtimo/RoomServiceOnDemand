@@ -24,7 +24,8 @@
         <div class="container">
 
             <#if errorMessage??>
-                <div style="color:red;font-style:italic;">
+                <br>
+                <div style="color:red;font-style:italic;font-size: large">
                     ${errorMessage}
                 </div>
             </#if>
